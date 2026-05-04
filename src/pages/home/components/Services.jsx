@@ -7,15 +7,11 @@ const services = [
     desc: "AI-powered chatbots that automate conversations, enhance customer support, and improve engagement across multiple digital platforms.",
   },
   {
-    title: "Voicebots",
-    desc: "Intelligent voice assistants that enable natural interactions, helping businesses deliver seamless voice-driven experiences for customer service, automation, and smart applications.",
-  },
-  {
     title: "Voice Recognition",
     desc: "Advanced speech recognition systems built for real-time processing, high accuracy, and seamless integration into modern software solutions and AI-driven workflows.",
   },
   {
-    title: "Remote Staffing",
+    title: "Remote Staffing for SMBs & Startups",
     desc: "Flexible remote development teams tailored for startups and SMBs, helping you scale faster with skilled engineers while reducing operational overhead and hiring complexity.",
   },
   {
@@ -39,9 +35,9 @@ export default function Services() {
         {/* TITLE */}
         <div className="mb-8">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="text-blue-500">OUR SERVICES</span>
+            <span className="text-blue-500">OUR CORE SERVICES</span>
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
+          <p className="text-gray-500 max-w-xl">
             Discover the solutions we offer to help your business grow, innovate,
             and stay ahead in a rapidly evolving digital world.
           </p>

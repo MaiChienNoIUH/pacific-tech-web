@@ -7,6 +7,7 @@ import About from "./components/About";
 import Blog from "./components/Blog";
 import CTA from "./components/CTA";
 import Partner from "./components/Partner";
+import Value from "./components/Value";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <Value />
       <Services />
       <Partner />
       <Blog />
