@@ -71,7 +71,6 @@ export default function Services() {
                   {item.desc}
                 </p>
 
-                {/* 👇 View more (secondary style) */}
                 <Button className="mb-6 bg-blue-50 text-blue-600 hover:bg-blue-100 text-sm px-4 py-2">
                   View more →
                 </Button>
@@ -82,7 +81,7 @@ export default function Services() {
 
         {/* GLOBAL CTA */}
         <div className="mt-16 text-center">
-          <Button className="bg-blue-500 text-white hover:bg-blue-600 px-8 py-3 text-lg">
+          <Button className="bg-blue-500 text-white hover:bg-blue-600 px-8 py-3">
             Explore all services →
           </Button>
         </div>
