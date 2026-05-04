@@ -24,6 +24,7 @@ export default function Footer() {
             <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">Services</p>
             <p className="text-gray-300 cursor-pointer hover:underline">Chatbots</p>
             <p className="text-gray-300 cursor-pointer hover:underline">Voicebots</p>
+            <p className="text-gray-300 cursor-pointer hover:underline">Voice recognition</p>
             <p className="text-gray-300 cursor-pointer hover:underline">Remote Staffing For SMBs - Startups</p>
             <p className="text-gray-300 cursor-pointer hover:underline">Software Testing</p>
             <p className="text-gray-300 cursor-pointer hover:underline">Web Application Development</p>

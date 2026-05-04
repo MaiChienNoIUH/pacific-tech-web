@@ -1,20 +1,9 @@
-// export default function Button({ children, className = "" }) {
-//   return (
-//     <button className={`px-6 py-3 rounded bg-black text-white ${className}`}>
-//       {children}
-//     </button>
-//   );
-// }
-export default function Button({ children, variant = "primary" }) {
-  const base = "px-6 py-3 rounded-lg font-medium transition";
-
-  const styles = {
-    primary: "bg-black text-white hover:bg-gray-800",
-    outline: "border border-black hover:bg-black hover:text-white",
-  };
-
+export default function Button({ children, className = "", ...props }) {
   return (
-    <button className={`${base} ${styles[variant]}`}>
+    <button
+      className={`px-4 py-2 rounded-lg font-medium transition cursor-pointer hover:scale-105 active:scale-95 ${className}`}
+      {...props}
+    >
       {children}
     </button>
   );
