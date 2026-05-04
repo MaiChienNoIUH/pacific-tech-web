@@ -3,7 +3,7 @@ import Button from "../../../components/ui/Button";
 
 export default function About() {
   return (
-    <section className="relative py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="relative py-24 bg-linear-to-b from-white to-gray-50 overflow-hidden">
       {/* 🔵 Background decoration */}
       <div className="absolute -top-20 -left-20 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-cyan-300/20 rounded-full blur-3xl"></div>

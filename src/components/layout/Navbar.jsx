@@ -70,7 +70,7 @@ export default function Navbar() {
 
               {/* MEGA MENU */}
               <div
-                className={`absolute left-1/2 -translate-x-1/2 mt-6 w-[900px] bg-white text-black rounded-2xl shadow-2xl p-10
+                className={`absolute left-1/2 -translate-x-1/2 mt-6 w-225 bg-white text-black rounded-2xl shadow-2xl p-10
                 transition-all duration-300 ${
                   openService
                     ? "opacity-100 translate-y-0 visible"
