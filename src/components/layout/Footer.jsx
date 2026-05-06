@@ -1,4 +1,5 @@
 import Container from "../ui/Container";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -11,38 +12,95 @@ export default function Footer() {
                 Pacific <span className="text-blue-400 text-4xl">Tech</span>
               </h2>
               <p className="text-gray-400">Navigating the Future of Software</p>
+
+              {/* SOCIAL */}
+              <div className="flex gap-4 mt-6">
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-blue-500 transition"
+                >
+                  <FaFacebookF />
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-blue-500 transition"
+                >
+                  <FaLinkedinIn />
+                </a>
+              </div>
             </div>
 
             <div>
-              <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">Careers</p>
-              <p className="font-semibold mb-3 text-blue-400 text-[20px] cursor-pointer hover:underline">About Us</p>
+              <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">
+                Careers
+              </p>
+              <p className="font-semibold mb-3 text-blue-400 text-[20px] cursor-pointer hover:underline">
+                About Us
+              </p>
             </div>
           </div>
 
           {/* Column */}
           <div>
-            <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">Services</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Chatbots</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Voicebots</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Voice recognition</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Remote Staffing For SMBs - Startups</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Software Testing</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Web Application Development</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Mobile App Development Services</p>
+            <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">
+              Services
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Chatbots
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Voicebots
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Voice recognition
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Remote Staffing For SMBs - Startups
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Software Testing
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Web Application Development
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Mobile App Development Services
+            </p>
           </div>
 
           <div>
-            <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">Blog</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">AI & Blockchain Trends</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Thought Leadership Articles</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Success Stories & Client Spotlights</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Industry Case Studies </p>
+            <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">
+              Blog
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              AI & Blockchain Trends
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Thought Leadership Articles
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Success Stories & Client Spotlights
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Industry Case Studies{" "}
+            </p>
           </div>
 
           <div>
-            <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">Legal</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Privacy Policy</p>
-            <p className="text-gray-300 cursor-pointer hover:underline">Terms</p>
+            <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">
+              Legal
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Privacy Policy
+            </p>
+            <p className="text-gray-300 cursor-pointer hover:underline">
+              Terms
+            </p>
           </div>
         </div>
 
