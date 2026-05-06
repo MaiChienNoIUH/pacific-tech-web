@@ -1,5 +1,6 @@
 import Container from "../../../components/ui/Container";
 import Button from "../../../components/ui/Button";
+import { motion } from "framer-motion";
 
 const blogs = [
   {
@@ -62,7 +63,13 @@ export default function Blog() {
         {/* GRID */}
         <div className="grid md:grid-cols-2 gap-10">
           {/* LEFT - FEATURED */}
-          <div className="group cursor-pointer">
+          <motion.div
+  className="group cursor-pointer"
+  initial={{ opacity: 0, x: -50 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
             <div className="overflow-hidden rounded-2xl">
               <img
                 src={featured.image}
@@ -76,15 +83,19 @@ export default function Blog() {
             <h3 className="text-2xl font-bold mt-2 group-hover:text-blue-500 transition">
               {featured.title}
             </h3>
-          </div>
+          </motion.div>
 
           {/* RIGHT - LIST */}
           <div className="flex flex-col gap-6">
-            {others.map((item) => (
-              <div
-                key={item.id}
-                className="flex gap-4 items-center group cursor-pointer"
-              >
+{others.map((item, index) => (
+  <motion.div
+    key={item.id}
+    initial={{ opacity: 0, x: 50 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+    viewport={{ once: true }}
+    className="flex gap-4 items-center group cursor-pointer"
+  >
                 {/* IMAGE */}
                 <div className="w-28 h-20 overflow-hidden rounded-lg shrink-0">
                   <img
@@ -102,7 +113,7 @@ export default function Blog() {
                     {item.title}
                   </h4>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
