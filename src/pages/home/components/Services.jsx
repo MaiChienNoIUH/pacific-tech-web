@@ -1,5 +1,6 @@
 import Container from "../../../components/ui/Container";
 import Button from "../../../components/ui/Button";
+import { motion } from "framer-motion";
 
 const services = [
   {
@@ -33,7 +34,13 @@ export default function Services() {
     <section className="py-24">
       <Container>
         {/* TITLE */}
-        <div className="mb-8">
+        <motion.div
+  className="mb-8"
+  initial={{ opacity: 0, x: -80 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.6 }}
+  viewport={{ once: true }}
+>
           <h2 className="text-4xl font-bold mb-4">
             <span className="text-blue-500">OUR CORE SERVICES</span>
           </h2>
@@ -41,10 +48,16 @@ export default function Services() {
             Discover the solutions we offer to help your business grow, innovate,
             and stay ahead in a rapidly evolving digital world.
           </p>
-        </div>
+        </motion.div>
 
         {/* LIST */}
-        <div className="w-full border-t border-gray-200">
+        <motion.div
+  className="w-full border-t border-gray-200"
+  initial={{ opacity: 0, x: -100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  viewport={{ once: true }}
+>
           {services.map((item, index) => (
             <div
               key={index}
@@ -73,7 +86,7 @@ export default function Services() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* GLOBAL CTA */}
         <div className="mt-16 text-center">

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Container from "../../../components/ui/Container";
 import Button from "../../../components/ui/Button";
 import heroImg from "../../../assets/contact.png";
+import { motion } from "framer-motion";
 
 export default function CTA() {
   const [form, setForm] = useState({
@@ -13,42 +14,42 @@ export default function CTA() {
   const [errors, setErrors] = useState({});
 
   // handle change
-const handleChange = (e) => {
-  const { name, value } = e.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-  // update form
-  setForm((prev) => ({
-    ...prev,
-    [name]: value,
-  }));
+    // update form
+    setForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
 
-  // validate từng field
-  setErrors((prev) => {
-    let newErrors = { ...prev };
+    // validate từng field
+    setErrors((prev) => {
+      let newErrors = { ...prev };
 
-    if (name === "name") {
-      if (!value.trim()) newErrors.name = "Please enter your name";
-      else delete newErrors.name;
-    }
-
-    if (name === "email") {
-      if (!value.trim()) {
-        newErrors.email = "Please enter your email";
-      } else if (!/\S+@\S+\.\S+/.test(value)) {
-        newErrors.email = "Invalid email format";
-      } else {
-        delete newErrors.email;
+      if (name === "name") {
+        if (!value.trim()) newErrors.name = "Please enter your name";
+        else delete newErrors.name;
       }
-    }
 
-    if (name === "message") {
-      if (!value.trim()) newErrors.message = "Please enter your message";
-      else delete newErrors.message;
-    }
+      if (name === "email") {
+        if (!value.trim()) {
+          newErrors.email = "Please enter your email";
+        } else if (!/\S+@\S+\.\S+/.test(value)) {
+          newErrors.email = "Invalid email format";
+        } else {
+          delete newErrors.email;
+        }
+      }
 
-    return newErrors;
-  });
-};
+      if (name === "message") {
+        if (!value.trim()) newErrors.message = "Please enter your message";
+        else delete newErrors.message;
+      }
+
+      return newErrors;
+    });
+  };
 
   // validate
   const validate = () => {
@@ -90,16 +91,20 @@ const handleChange = (e) => {
 
   return (
     <section className="relative py-24 bg-linear-to-br from-[#0b1a3a] to-[#0f2c6b] overflow-hidden">
-      
       {/* Background glow */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-blue-400/20 blur-3xl rounded-full"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-300/20 blur-3xl rounded-full"></div>
 
       <Container>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-
           {/* LEFT */}
-          <div className="relative hidden md:block">
+          <motion.div
+            className="relative hidden md:block"
+            initial={{ opacity: 0, y: -80 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <img
               src={heroImg}
               alt="contact"
@@ -109,13 +114,23 @@ const handleChange = (e) => {
             <div className="absolute bottom-5 right-5 bg-white/10 backdrop-blur-xl border border-white/20 text-white px-8 py-6 rounded-2xl shadow-2xl">
               <h3 className="text-4xl font-bold mb-2">Hi!</h3>
               <p className="text-gray-200 text-sm leading-relaxed max-w-xs">
-                Building smarter, scalable solutions to drive your digital future forward.
+                Building smarter, scalable solutions to drive your digital
+                future forward.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* FORM */}
-          <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10">
+          <motion.div
+            className="bg-white rounded-2xl shadow-2xl p-8 md:p-10"
+            initial={{ opacity: 0, y: -100, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.22, 1, 0.36, 1], // kiểu bounce mượt
+            }}
+            viewport={{ once: true }}
+          >
             <p className="text-blue-500 font-bold mb-2 pb-2 uppercase text-md tracking-wide">
               Contact Us
             </p>
@@ -125,7 +140,6 @@ const handleChange = (e) => {
             </h2>
 
             <form className="space-y-5" onSubmit={handleSubmit}>
-
               {/* NAME */}
               <div>
                 <label className="text-sm text-gray-600">Full name</label>
@@ -143,7 +157,9 @@ const handleChange = (e) => {
                   }`}
                 />
                 {errors.name && (
-                  <p className="text-red-500 text-sm mt-1 pt-1">{errors.name}</p>
+                  <p className="text-red-500 text-sm mt-1 pt-1">
+                    {errors.name}
+                  </p>
                 )}
               </div>
 
@@ -164,7 +180,9 @@ const handleChange = (e) => {
                   }`}
                 />
                 {errors.email && (
-                  <p className="text-red-500 text-sm mt-1 pt-1">{errors.email}</p>
+                  <p className="text-red-500 text-sm mt-1 pt-1">
+                    {errors.email}
+                  </p>
                 )}
               </div>
 
@@ -187,9 +205,7 @@ const handleChange = (e) => {
                   }`}
                 />
                 {errors.message && (
-                  <p className="text-red-500 text-sm mt-1">
-                    {errors.message}
-                  </p>
+                  <p className="text-red-500 text-sm mt-1">{errors.message}</p>
                 )}
               </div>
 
@@ -200,10 +216,8 @@ const handleChange = (e) => {
               >
                 Send Message
               </Button>
-
             </form>
-          </div>
-
+          </motion.div>
         </div>
       </Container>
     </section>
