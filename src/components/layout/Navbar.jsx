@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,9 +49,9 @@ export default function Navbar() {
               scrolled ? "text-black" : "text-white"
             }`}
           >
-            <a href="#" className="hover:text-blue-400 transition">
+            <Link to="/about" className="hover:text-blue-400 transition">
               About us
-            </a>
+            </Link>
 
             {/* SERVICES */}
             <div
