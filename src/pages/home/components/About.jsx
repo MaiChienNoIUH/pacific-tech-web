@@ -1,6 +1,7 @@
 import Container from "../../../components/ui/Container";
 import Button from "../../../components/ui/Button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function About() {
   return (
@@ -37,11 +38,11 @@ export default function About() {
             </p>
 
             {/* CTA */}
-            <div>
+            <Link to="/about">
               <Button className="bg-blue-500 text-white hover:bg-blue-600 mt-5">
                 More About Us →
               </Button>
-            </div>
+            </Link>
           </motion.div>
 
           {/* RIGHT CONTENT (Highlight Cards) */}
