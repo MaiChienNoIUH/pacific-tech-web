@@ -1,12 +1,21 @@
 import { useEffect, useState } from "react";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
-import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, Menu, X, Bot, Laptop, FolderKanban } from "lucide-react";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [openService, setOpenService] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const [openMobileServices, setOpenMobileServices] = useState(false);
+
+  const [openAi, setOpenAi] = useState(false);
+  const [openIt, setOpenIt] = useState(false);
+  const [openInternal, setOpenInternal] = useState(false);
+    const [activeService, setActiveService] = useState("ai");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +24,10 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
+  }, [isMobileMenuOpen]);
 
   return (
     <header
@@ -26,16 +39,11 @@ export default function Navbar() {
     >
       <Container>
         <div className="flex justify-between items-center py-4">
-          {/* LOGO */}
           <a
             href="/"
-            className={`text-2xl md:text-3xl font-bold tracking-wide transition-all duration-300
-  ${
-    scrolled
-      ? "text-black"
-      : "text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
-  }
-  hover:scale-105`}
+            className={`text-2xl md:text-3xl font-bold tracking-wide transition-all duration-300 z-60 ${
+              scrolled || isMobileMenuOpen ? "text-black" : "text-white"
+            } hover:scale-105`}
           >
             Pacific{" "}
             <span className={`${scrolled ? "text-blue-600" : "text-blue-400"}`}>
@@ -43,7 +51,6 @@ export default function Navbar() {
             </span>
           </a>
 
-          {/* MENU */}
           <nav
             className={`hidden md:flex gap-8 items-center text-base font-medium ${
               scrolled ? "text-black" : "text-white"
@@ -53,7 +60,6 @@ export default function Navbar() {
               About us
             </Link>
 
-            {/* SERVICES */}
             <div
               className="relative"
               onMouseEnter={() => setOpenService(true)}
@@ -69,7 +75,6 @@ export default function Navbar() {
                 />
               </div>
 
-              {/* MEGA MENU */}
               <div
                 className={`absolute left-1/2 -translate-x-1/2 mt-6 w-225 bg-white text-black rounded-2xl shadow-2xl p-10
                 transition-all duration-300 ${
@@ -79,7 +84,6 @@ export default function Navbar() {
                 }`}
               >
                 <div className="grid grid-cols-3 gap-10">
-                  {/* COLUMN 1 */}
                   <div>
                     <a
                       href="#"
@@ -106,7 +110,6 @@ export default function Navbar() {
                     </ul>
                   </div>
 
-                  {/* COLUMN 2 */}
                   <div>
                     <a
                       href="#"
@@ -148,7 +151,6 @@ export default function Navbar() {
                     </ul>
                   </div>
 
-                  {/* COLUMN 3 */}
                   <div>
                     <a
                       href="#"
@@ -173,23 +175,223 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a href="/careers" className="hover:text-blue-400 transition">
+            <Link to="/careers" className="hover:text-blue-400 transition">
               Careers
-            </a>
+            </Link>
 
             <a href="#" className="hover:text-blue-400 transition">
               Blog
             </a>
           </nav>
 
-          {/* BUTTON */}
-          <div className="hidden md:block">
-            <Button className="text-sm px-4 py-2 bg-blue-500 text-white hover:bg-blue-600">
-              Contact Us
-            </Button>
+          <div className="flex items-center gap-4">
+            <div className="hidden md:block">
+              <Button className="text-sm px-4 py-2 bg-blue-500 text-white hover:bg-blue-600">
+                Contact Us
+              </Button>
+            </div>
+
+            <button
+              className={`md:hidden z-60 transition-colors ${
+                scrolled || isMobileMenuOpen ? "text-black" : "text-white"
+              }`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
           </div>
         </div>
       </Container>
+
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
+            className="fixed top-0 left-0 w-full h-dvh bg-white z-50 flex flex-col p-4 pt-24 md:hidden overflow-y-scroll"
+            style={{ WebkitOverflowScrolling: "touch" }}
+          >
+            <nav className="flex flex-col gap-6 text-xl font-semibold text-black">
+              <Link
+                to="/about"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="border-b border-gray-100 pb-4"
+              >
+                About us
+              </Link>
+
+              <div className="border-b border-gray-100 pb-4">
+                {/* MAIN SERVICES */}
+                <button
+                  onClick={() => setOpenMobileServices(!openMobileServices)}
+                  className="w-full flex items-center justify-between text-xl font-semibold text-black"
+                >
+                  <span>Services</span>
+
+                  <ChevronDown
+                    size={22}
+                    className={`transition-transform duration-300 ${
+                      openMobileServices ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {openMobileServices && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden mt-5 flex flex-col gap-4"
+                    >
+                      {/* AI SOLUTIONS */}
+                      <div className="bg-gray-50 rounded-2xl overflow-hidden">
+                        <button
+                          onClick={() => setOpenAi(!openAi)}
+                          className="w-full flex items-center justify-between px-5 py-4"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Bot className="text-blue-600" size={22} />
+                            <span className="font-semibold text-[17px] text-black">
+                              AI Solutions
+                            </span>
+                          </div>
+
+                          <ChevronDown
+                            size={18}
+                            className={`transition-transform duration-300 ${
+                              openAi ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {openAi && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
+                                <Link to="#">Chatbots</Link>
+                                <Link to="#">Voicebots</Link>
+                                <Link to="#">Voice Recognition</Link>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+
+                      {/* IT SOLUTIONS */}
+                      <div className="bg-gray-50 rounded-2xl overflow-hidden">
+                        <button
+                          onClick={() => setOpenIt(!openIt)}
+                          className="w-full flex items-center justify-between px-5 py-4"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Laptop className="text-blue-600" size={22} />
+                            <span className="font-semibold text-[17px] text-black">
+                              IT Solutions
+                            </span>
+                          </div>
+
+                          <ChevronDown
+                            size={18}
+                            className={`transition-transform duration-300 ${
+                              openIt ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {openIt && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
+                                <Link to="#">Insourcing Services</Link>
+                                <Link to="#">Outsourcing Services</Link>
+                                <Link to="#">Remote Staffing</Link>
+                                <Link to="#">Software Testing</Link>
+                                <Link to="#">Web Development</Link>
+                                <Link to="#">Mobile Apps</Link>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+
+                      {/* INTERNAL PROJECTS */}
+                      <div className="bg-gray-50 rounded-2xl overflow-hidden">
+                        <button
+                          onClick={() => setOpenInternal(!openInternal)}
+                          className="w-full flex items-center justify-between px-5 py-4"
+                        >
+                          <div className="flex items-center gap-3">
+                            <FolderKanban className="text-blue-600" size={22} />
+                            <span className="font-semibold text-[17px] text-black">
+                              Internal Projects
+                            </span>
+                          </div>
+
+                          <ChevronDown
+                            size={18}
+                            className={`transition-transform duration-300 ${
+                              openInternal ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {openInternal && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
+                                <Link to="#">Working Utilities</Link>
+                                <Link to="#">Games</Link>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <Link
+                to="/careers"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="border-b border-gray-100 pb-4"
+              >
+                Careers
+              </Link>
+              <Link
+                to="#"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="border-b border-gray-100 pb-4"
+              >
+                Blog
+              </Link>
+
+              <Button className="mt-4 w-full py-4 bg-blue-600 text-white rounded-xl">
+                Contact Us
+              </Button>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
