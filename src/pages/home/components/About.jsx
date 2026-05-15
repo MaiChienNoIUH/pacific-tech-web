@@ -54,7 +54,7 @@ export default function About() {
             viewport={{ once: true }}
           >
             <div className="p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition hover:-translate-y-1">
-              <h3 className="text-2xl font-bold text-blue-500">12+</h3>
+              <h3 className="text-2xl font-bold text-blue-500">18+</h3>
               <p className="text-gray-600 mt-2">Years Experience</p>
             </div>
 
