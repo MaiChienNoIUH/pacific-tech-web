@@ -11,7 +11,7 @@ const stats = [
     label: "Global Clients",
   },
   {
-    number: "12+",
+    number: "18+",
     label: "Years Experience",
   },
   {
