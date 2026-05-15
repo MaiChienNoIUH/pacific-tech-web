@@ -173,7 +173,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            <a href="#" className="hover:text-blue-400 transition">
+            <a href="/careers" className="hover:text-blue-400 transition">
               Careers
             </a>
 
