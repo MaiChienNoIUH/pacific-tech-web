@@ -13,18 +13,21 @@ const services = [
     title: "AI Solutions",
     description:
       "Custom AI systems, AI chatbots, automation tools, and intelligent business solutions.",
+    path: "/services/ai-solutions",
   },
   {
     icon: Database,
     title: "IT Solutions",
     description:
       "Technology consulting, software development, outsourcing, and digital transformation services.",
+    path: "/services/it-solutions",
   },
   {
     icon: FolderKanban,
     title: "Internal Projects",
     description:
       "Innovative in-house products, utilities, and digital platforms built to improve productivity and user experiences.",
+    path: "/services/internal-projects",
   },
 ];
 

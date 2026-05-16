@@ -30,7 +30,7 @@ export default function Timeline() {
       <Container>
         {/* Header */}
         <div className="text-center mb-16">
-          <p className="uppercase text-blue-500 tracking-[0.3em] font-semibold mb-4">
+          <p className="uppercase text-blue-500 tracking-[0.3em] font-bold mb-4">
             Our Journey
           </p>
 

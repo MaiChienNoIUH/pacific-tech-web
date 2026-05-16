@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-export default function ServiceCard({
-  icon: Icon,
-  title,
-  description,
-}) {
+export default function ServiceCard({ icon: Icon, title, description, path }) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    if (path) {
+      navigate(path);
+    }
+  };
+
   return (
     <motion.div
+      onClick={handleClick}
       whileHover={{ y: -10 }}
       transition={{ duration: 0.25 }}
       className="
@@ -18,18 +24,21 @@ export default function ServiceCard({
         cursor-pointer
       "
     >
-      <div className="
-        absolute inset-0 opacity-0
-        group-hover:opacity-100
-        transition duration-500
-
-        bg-linear-to-br
-        from-blue-500/10
-        via-blue-500/5
-        to-blue-600/15
-      " />
+      {/* hover effect */}
+      <div
+        className="
+          absolute inset-0 opacity-0
+          group-hover:opacity-100
+          transition duration-500
+          bg-linear-to-br
+          from-blue-500/10
+          via-blue-500/5
+          to-blue-600/15
+        "
+      />
 
       <div className="relative z-10">
+        {/* icon */}
         <div className="
           w-16 h-16 rounded-2xl
           border border-blue-500/20
@@ -40,20 +49,22 @@ export default function ServiceCard({
           <Icon className="text-blue-400" size={30} />
         </div>
 
-        <h3 className="text-2xl font-semibold mb-4">
+        {/* title */}
+        <h3 className="text-2xl font-semibold mb-4 text-[#0b1a3a]">
           {title}
         </h3>
 
-        <p className="text-gray-400 leading-relaxed mb-8">
+        {/* description */}
+        <p className="text-gray-500 leading-relaxed mb-8">
           {description}
         </p>
 
+        {/* CTA */}
         <button className="
           flex items-center gap-2
-          text-blue-400 font-medium
+          text-blue-500 font-medium
           transition-all
           group-hover:gap-4
-          cursor-pointer
         ">
           Learn More
           <ArrowUpRight size={18} />
