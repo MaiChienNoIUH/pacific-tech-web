@@ -15,7 +15,7 @@ export default function Navbar() {
   const [openAi, setOpenAi] = useState(false);
   const [openIt, setOpenIt] = useState(false);
   const [openInternal, setOpenInternal] = useState(false);
-    const [activeService, setActiveService] = useState("ai");
+  const [activeService, setActiveService] = useState("ai");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,7 +65,10 @@ export default function Navbar() {
               onMouseEnter={() => setOpenService(true)}
               onMouseLeave={() => setOpenService(false)}
             >
-              <div className="flex items-center gap-1 cursor-pointer hover:text-blue-400 transition">
+              <Link
+                to="/services"
+                className="flex items-center gap-1 cursor-pointer hover:text-blue-400 transition"
+              >
                 Services
                 <ChevronDown
                   size={16}
@@ -73,7 +76,7 @@ export default function Navbar() {
                     openService ? "rotate-180" : ""
                   }`}
                 />
-              </div>
+              </Link>
 
               <div
                 className={`absolute left-1/2 -translate-x-1/2 mt-6 w-225 bg-white text-black rounded-2xl shadow-2xl p-10
