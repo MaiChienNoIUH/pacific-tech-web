@@ -4,7 +4,9 @@ import HomePage from "./pages/home/Homepage";
 import AboutPage from "./pages/about-us/AboutPage";
 import Career from "./pages/career/Career";
 import ServicesPage from "./pages/services/ServicesPage";
-import AISolutionsPage from "./pages/services/AISolutions/AISolutionsPage";
+import AISolutionsPage from "./pages/services/AISolutions/AISolutionsPage"
+import ITSolutionsPage from "./pages/services/ITSolutions/ITSolutionsPage"
+import InternalProjectsPage from "./pages/services/interal-projects/InternalProjectsPage";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
 
@@ -20,6 +22,8 @@ function App() {
 
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/ai-solutions" element={<AISolutionsPage />} />
+        <Route path="/services/it-solutions" element={<ITSolutionsPage />} />
+        <Route path="/services/internal-projects" element={<InternalProjectsPage />} />
       </Routes>
     </BrowserRouter>
   );

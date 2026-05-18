@@ -3,7 +3,6 @@ import Footer from "../../../components/layout/Footer";
 
 import AIHero from "./components/AIHero";
 import AIOverview from "./components/AIOverview";
-import AICapabilities from "./components/AICapabilities";
 import AIUseCases from "./components/AIUseCases";
 import WhyAI from "./components/WhyAI";
 import CTA from "./components/CTA";

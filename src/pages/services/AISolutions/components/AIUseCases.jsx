@@ -69,7 +69,6 @@ export default function AIUsecases() {
                       Read More
                     </span>
                     
-                    {/* Icon mũi tên cũng scale nhẹ theo để ăn khớp nhịp điệu */}
                     <ArrowRight size={18} className="transition-transform duration-300 group-hover:scale-105" />
                   </a>
                 </div>

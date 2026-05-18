@@ -37,20 +37,14 @@ export default function ServicesHero() {
         <img
           src={heroImage}
           alt="services background"
-          className="w-full h-full object-cover opacity-25"
+          className="w-full h-full object-cover"
         />
       </div>
 
-      {/* BLUE OVERLAY để giữ brand */}
-      <div className="absolute inset-0 bg-linear-to-b from-[#0e275d]/8 via-[#eef5ff]/30 to-[#eef5ff]/80" />
+      <div className="absolute inset-0 bg-linear-to-b from-[#061634]/15 via-[#0b1f4d]/8 to-transparent" />
 
-      {/* glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-175 bg-blue-500/10 blur-[110px]" />
-
-      {/* background giữ nguyên */}
-      {/* <div className="absolute inset-0 bg-linear-to-b from-blue-600/15 via-blue-50 to-[#eef5ff]" />
-
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-175 bg-blue-500/20 blur-[140px]" /> */}
+      {/* glow nhẹ hơn */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-175 bg-blue-400/8 blur-[140px]" />
 
       <Container>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -60,7 +54,7 @@ export default function ServicesHero() {
           </span>
 
           {/* title */}
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-10 text-[#0b1a3a]">
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-10 text-white!">
             Smart Digital
             <span className="text-blue-600"> Solutions</span>
             <br />
@@ -78,10 +72,11 @@ export default function ServicesHero() {
                 transition={{ duration: 0.4 }}
                 className="max-w-3xl"
               >
-                <h3 className="text-xl md:text-2xl font-semibold text-[#0b1a3a] mb-3">
+                <h3 className="text-xl md:text-2xl font-semibold text-white mb-3">
                   {slides[index].title}
                 </h3>
-                <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+
+                <p className="text-blue-100/85 text-base md:text-lg leading-relaxed">
                   {slides[index].desc}
                 </p>
               </motion.div>

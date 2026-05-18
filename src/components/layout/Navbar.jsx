@@ -89,7 +89,7 @@ export default function Navbar() {
                 <div className="grid grid-cols-3 gap-10">
                   <div>
                     <a
-                      href="#"
+                      href="/services/ai-solutions"
                       className="block text-blue-600 font-semibold mb-4 hover:underline"
                     >
                       AI Solutions
@@ -115,7 +115,7 @@ export default function Navbar() {
 
                   <div>
                     <a
-                      href="#"
+                      href="/services/it-solutions"
                       className="block text-blue-600 font-semibold mb-4 hover:underline"
                     >
                       IT Solutions
@@ -156,7 +156,7 @@ export default function Navbar() {
 
                   <div>
                     <a
-                      href="#"
+                      href="/services/internal-projects"
                       className="block text-blue-600 font-semibold mb-4 hover:underline"
                     >
                       Internal Projects
