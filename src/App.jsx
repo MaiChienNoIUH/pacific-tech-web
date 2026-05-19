@@ -7,6 +7,7 @@ import ServicesPage from "./pages/services/ServicesPage";
 import AISolutionsPage from "./pages/services/AISolutions/AISolutionsPage"
 import ITSolutionsPage from "./pages/services/ITSolutions/ITSolutionsPage"
 import InternalProjectsPage from "./pages/services/interal-projects/InternalProjectsPage";
+import ChatbotPage from "./pages/services/AISolutions/chat-bot/ChatbotPage";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
 
@@ -24,6 +25,9 @@ function App() {
         <Route path="/services/ai-solutions" element={<AISolutionsPage />} />
         <Route path="/services/it-solutions" element={<ITSolutionsPage />} />
         <Route path="/services/internal-projects" element={<InternalProjectsPage />} />
+
+        <Route path="/services/ai-solutions/chat-bot" element={<ChatbotPage />} />
+
       </Routes>
     </BrowserRouter>
   );

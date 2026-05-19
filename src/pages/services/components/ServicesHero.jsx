@@ -56,7 +56,7 @@ export default function ServicesHero() {
           {/* title */}
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-10 text-white!">
             Smart Digital
-            <span className="text-blue-600"> Solutions</span>
+            <span className="text-white"> Solutions</span>
             <br />
             For Modern Businesses
           </h1>

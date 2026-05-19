@@ -96,17 +96,17 @@ export default function Navbar() {
                     </a>
                     <ul className="space-y-2 text-gray-700">
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/ai-solutions/chat-bot" className="hover:text-blue-500 transition">
                           Chatbots
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/ai-solutions/voice-bot" className="hover:text-blue-500 transition">
                           Voicebots
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/ai-solutions/voice-recognition" className="hover:text-blue-500 transition">
                           Voice recognition
                         </a>
                       </li>
@@ -122,32 +122,32 @@ export default function Navbar() {
                     </a>
                     <ul className="space-y-2 text-gray-700">
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/insourcing" className="hover:text-blue-500 transition">
                           Insourcing Services
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/outsourcing" className="hover:text-blue-500 transition">
                           Outsourcing Services
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/remote-staffing" className="hover:text-blue-500 transition">
                           Remote Staffing
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/software-testing" className="hover:text-blue-500 transition">
                           Software Testing
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/web-development" className="hover:text-blue-500 transition">
                           Web Development
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/mobile-apps" className="hover:text-blue-500 transition">
                           Mobile Apps
                         </a>
                       </li>
