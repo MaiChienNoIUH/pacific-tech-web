@@ -10,13 +10,13 @@ const items = [
     title: "AI Chatbots",
     desc: "Empower your business with smart conversational chatbots that seamlessly automate customer support, sales inquiries, and user engagement 24/7. Utilizing advanced Natural Language Processing (NLP), these bots understand user intent accurately and deliver context-aware, human-like responses that boost conversion rates and drastically cut operational costs.",
     img: aiChatbots,
-    link: "/services/ai-solutions/chat-bot",
+    link: "/services/ai-solutions/chatbots",
   },
   {
     title: "AI Voicebots",
     desc: "Scale your communication effortlessly with sophisticated automated voice assistant systems. Engineered to handle thousands of inbound and outbound calls simultaneously, our voicebots resolve queries instantly in real-time. They adapt smoothly to customer emotions, mimic natural phrasing, and perfectly streamline repetitive call-center workflows.",
     img: aiVoicebots,
-    link: "/services/ai-solutions/voice-bot",
+    link: "/services/ai-solutions/voicebots",
   },
   {
     title: "Voice Recognition",

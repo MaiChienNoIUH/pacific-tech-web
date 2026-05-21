@@ -96,12 +96,12 @@ export default function Navbar() {
                     </a>
                     <ul className="space-y-2 text-gray-700">
                       <li>
-                        <a href="/services/ai-solutions/chat-bot" className="hover:text-blue-500 transition">
+                        <a href="/services/ai-solutions/chatbots" className="hover:text-blue-500 transition">
                           Chatbots
                         </a>
                       </li>
                       <li>
-                        <a href="/services/ai-solutions/voice-bot" className="hover:text-blue-500 transition">
+                        <a href="/services/ai-solutions/voicebots" className="hover:text-blue-500 transition">
                           Voicebots
                         </a>
                       </li>
