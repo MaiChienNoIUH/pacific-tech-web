@@ -321,7 +321,7 @@ export default function Navbar() {
                               <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
                                 <Link to="#">Insourcing Services</Link>
                                 <Link to="#">Outsourcing Services</Link>
-                                <Link to="#">Remote Staffing</Link>
+                                <Link to="#">Remote Staffing For SMBs - Startups</Link>
                                 <Link to="#">Software Testing</Link>
                                 <Link to="#">Web Development</Link>
                                 <Link to="#">Mobile Apps</Link>

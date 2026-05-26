@@ -24,17 +24,16 @@ const steps = [
 export default function VoiceRecognitionProcess() {
   return (
     <section className="py-24 bg-slate-950 text-white overflow-hidden relative">
-       {/* BACKGROUND */}
-  <div className="absolute inset-0 bg-[linear-gradient(135deg,#163B66_0%,#0E1D54_28%,#0B1744_55%,#081235_100%)]" />
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,#163B66_0%,#0E1D54_28%,#0B1744_55%,#081235_100%)]" />
 
-  {/* LEFT CYAN GLOW */}
-  <div className="absolute -bottom-45 -left-35 w-130 h-130 bg-cyan-400/35 blur-[130px] rounded-full" />
+      {/* LEFT CYAN GLOW */}
+      <div className="absolute -bottom-45 -left-35 w-130 h-130 bg-cyan-400/35 blur-[130px] rounded-full" />
 
-  {/* SUBTLE DARK DEPTH */}
-  <div className="absolute inset-0 bg-black/10" />
+      {/* SUBTLE DARK DEPTH */}
+      <div className="absolute inset-0 bg-black/10" />
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_560px] gap-20 items-center relative z-10">
-          
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 35 }}
@@ -122,7 +121,6 @@ export default function VoiceRecognitionProcess() {
             }}
             className="relative hidden lg:flex items-center justify-center"
           >
-            
             {/* top floating card */}
             <motion.div
               transition={{
@@ -174,16 +172,13 @@ export default function VoiceRecognitionProcess() {
                 Accuracy
               </div>
 
-              <div className="mt-2 text-3xl font-bold text-white">
-                95%
-              </div>
+              <div className="mt-2 text-3xl font-bold text-white">95%</div>
 
               <p className="mt-1 text-sm text-slate-400">
                 Multilingual speech recognition
               </p>
             </motion.div>
           </motion.div>
-
         </div>
       </Container>
     </section>

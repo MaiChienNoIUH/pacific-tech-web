@@ -23,7 +23,7 @@ export default function InsourcingCTA() {
           </p>
 
           <div className="mt-10 flex gap-5 justify-center">
-            <Button className="px-6 py-3 bg-blue-600 text-white rounded-xl">
+            <Button className="px-6 py-2 bg-blue-600 text-white rounded-xl cursor-alias hover:bg-blue-700 transition">
               Talk to Us
             </Button>
           </div>

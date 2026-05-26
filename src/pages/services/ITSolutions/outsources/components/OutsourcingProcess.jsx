@@ -4,14 +4,11 @@ import Container from "../../../../../components/ui/Container";
 import processImg from "../../../../../assets/insourcing-process2.jpg";
 
 const steps = [
-  { title: "Discovery", desc: "Understand requirements and team structure." },
-  {
-    title: "Talent Matching",
-    desc: "Select engineers aligned with your stack.",
-  },
-  { title: "Integration", desc: "Embed team into your workflow." },
-  { title: "Delivery", desc: "Start building and iterating quickly." },
-  { title: "Scaling", desc: "Expand team size as needed." },
+  { title: "Requirement Analysis", desc: "Understand goals and project scope." },
+  { title: "Team Setup", desc: "Assign and structure delivery team." },
+  { title: "Execution", desc: "Start development with agile workflow." },
+  { title: "Quality Assurance", desc: "Testing and validation across all modules." },
+  { title: "Delivery & Support", desc: "Deploy and maintain production systems." },
 ];
 
 export default function InsourcingProcess() {
