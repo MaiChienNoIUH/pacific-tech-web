@@ -46,8 +46,8 @@ export default function VoiceRecognitionSteps() {
       <Container>
         {/* Header */}
         <div className="max-w-3xl mb-20 relative z-10">
-          <span className="text-xs font-bold tracking-[0.25em] uppercase text-cyan-300 bg-cyan-400/10 border border-cyan-300/20 px-4 py-2 mb-3 rounded-full inline-block backdrop-blur-sm">
-            IMPLEMENTATION PROCESS
+          <span className="text-sm font-medium text-cyan-300 bg-cyan-400/10 border border-cyan-300/20 px-4 py-2 mb-3 rounded-full inline-block backdrop-blur-sm">
+            Implementation Process
           </span>
 
           <h2 className="text-4xl! md:text-5xl font-bold text-white! mt-6 leading-tight tracking-tight">

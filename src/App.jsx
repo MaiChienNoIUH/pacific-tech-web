@@ -10,6 +10,7 @@ import InternalProjectsPage from "./pages/services/interal-projects/InternalProj
 import ChatbotPage from "./pages/services/AISolutions/chat-bot/ChatbotPage";
 import VoicebotsPage from "./pages/services/AISolutions/voice-bots/VoicebotsPage";
 import VoiceRecognitionPage from "./pages/services/AISolutions/voice-recognition/VoiceRecognitionPage";
+import InsourcingPage from "./pages/services/ITSolutions/insources/InsourcingServicesPage";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
 
@@ -31,6 +32,7 @@ function App() {
         <Route path="/services/ai-solutions/chatbots" element={<ChatbotPage />} />
         <Route path="/services/ai-solutions/voicebots" element={<VoicebotsPage />} />
         <Route path="/services/ai-solutions/voice-recognition" element={<VoiceRecognitionPage />} />
+        <Route path="/services/it-solutions/insourcing" element={<InsourcingPage />} />
 
       </Routes>
     </BrowserRouter>

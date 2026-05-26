@@ -92,7 +92,7 @@ export default function VoiceRecognitionUseCases() {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-45 object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-45 object-cover transition-transform duration-700"
                     />
                   </motion.div>
 

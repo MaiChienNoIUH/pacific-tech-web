@@ -125,9 +125,6 @@ export default function VoiceRecognitionProcess() {
             
             {/* top floating card */}
             <motion.div
-              animate={{
-                y: [0, -8, 0],
-              }}
               transition={{
                 duration: 4,
                 repeat: Infinity,
@@ -156,10 +153,6 @@ export default function VoiceRecognitionProcess() {
 
             {/* image */}
             <motion.img
-              whileHover={{
-                scale: 1.03,
-                rotate: -1,
-              }}
               transition={{
                 duration: 0.45,
               }}
@@ -170,9 +163,6 @@ export default function VoiceRecognitionProcess() {
 
             {/* floating bottom metric */}
             <motion.div
-              animate={{
-                y: [0, 10, 0],
-              }}
               transition={{
                 duration: 5,
                 repeat: Infinity,

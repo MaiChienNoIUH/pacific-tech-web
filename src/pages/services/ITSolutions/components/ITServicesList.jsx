@@ -10,12 +10,12 @@ import imgWebDev from "../../../../assets/web-dev2.png";
 import imgMobileApps from "../../../../assets/mobile-app.png";
 
 const services = [
-  { title: "Insourcing Services", desc: "Build your internal capabilities by integrating our top-tier technical specialists directly into your core team. We provide engineering expertise while you maintain full control over code and management.", img: imgInsourcing, path: "/services/insourcing" },
-  { title: "Outsourcing Services", desc: "Hand over your technology roadmap to a trusted partner. Our software engineering teams take complete ownership of your product development from concept to secure production delivery.", img: imgOutsourcing, path: "/services/outsourcing" },
-  { title: "Remote Staffing", desc: "Scale your technical workforce instantly with highly-vetted remote developers, UI/UX designers, and QA engineers. Eliminate hiring constraints and overhead costs seamlessly.", img: imgRemoteStaffing, path: "/services/remote-staffing" },
-  { title: "Software Testing", desc: "Ensure flawless user experiences with comprehensive Quality Assurance. From automated testing to high-load performance analysis, we eliminate bugs before deployment.", img: imgTesting, path: "/services/software-testing" },
-  { title: "Web Development", desc: "Launch high-performance, secure, and SEO-optimized web applications built with modern frameworks. Our scalable architectures handle heavy traffic spikes fluidly.", img: imgWebDev, path: "/services/web-development" },
-  { title: "Mobile Apps", desc: "Deliver premium cross-platform and native mobile experiences across iOS and Android. We focus on intuitive interfaces, fluid animations, and robust offline capabilities.", img: imgMobileApps, path: "/services/mobile-apps" },
+  { title: "Insourcing Services", desc: "Build your internal capabilities by integrating our top-tier technical specialists directly into your core team. We provide engineering expertise while you maintain full control over code and management.", img: imgInsourcing, path: "/services/it-solutions/insourcing" },
+  { title: "Outsourcing Services", desc: "Hand over your technology roadmap to a trusted partner. Our software engineering teams take complete ownership of your product development from concept to secure production delivery.", img: imgOutsourcing, path: "/services/it-solutions/outsourcing" },
+  { title: "Remote Staffing", desc: "Scale your technical workforce instantly with highly-vetted remote developers, UI/UX designers, and QA engineers. Eliminate hiring constraints and overhead costs seamlessly.", img: imgRemoteStaffing, path: "/services/it-solutions/remote-staffing" },
+  { title: "Software Testing", desc: "Ensure flawless user experiences with comprehensive Quality Assurance. From automated testing to high-load performance analysis, we eliminate bugs before deployment.", img: imgTesting, path: "/services/it-solutions/software-testing" },
+  { title: "Web Development", desc: "Launch high-performance, secure, and SEO-optimized web applications built with modern frameworks. Our scalable architectures handle heavy traffic spikes fluidly.", img: imgWebDev, path: "/services/it-solutions/web-development" },
+  { title: "Mobile Apps", desc: "Deliver premium cross-platform and native mobile experiences across iOS and Android. We focus on intuitive interfaces, fluid animations, and robust offline capabilities.", img: imgMobileApps, path: "/services/it-solutions/mobile-apps" },
 ];
 
 export default function ITServicesList() {

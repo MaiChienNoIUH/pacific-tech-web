@@ -56,7 +56,6 @@ export default function ChatbotSteps() {
           </h2>
         </div>
 
-        {/* Danh sách các bước dạng sơ đồ Zig-zag dọc */}
         <div className="relative w-full space-y-4">
           {steps.map((step, i) => {
             const isRight = i % 2 === 1;
