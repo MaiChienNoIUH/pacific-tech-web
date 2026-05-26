@@ -4,6 +4,7 @@ import {
   BrainCircuit,
   AudioLines,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import voicebotDardboard from "../../../../../assets/voicebot-dardboard1.png";
 
 const items = [
@@ -31,12 +32,17 @@ export default function VoicebotTechStack() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           
           {/* LEFT */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 35 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
             <span className="inline-flex items-center px-4 py-1.5 mb-3 rounded-full bg-blue-50 border border-blue-100 text-sm font-medium text-blue-700">
               How It Works
             </span>
 
-            <h2 className="mt-6 text-3xl! md:text-5xl font-semibold text-slate-900 leading-tight">
+            <h2 className="mt-6 text-4xl md:text-5xl font-semibold text-slate-900 leading-tight">
               How Voicebots Understand and Respond
             </h2>
 
@@ -48,13 +54,25 @@ export default function VoicebotTechStack() {
 
             <div className="mt-6 space-y-5">
               {items.map((item, i) => (
-                <div
+                <motion.div
                   key={i}
-                  className="bg-white border border-slate-200 rounded-3xl p-7 flex gap-5"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: i * 0.12,
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -3 }}
+                  className="bg-white border border-slate-200 rounded-3xl p-7 flex gap-5 transition-all duration-300 hover:shadow-lg"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                    className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0"
+                  >
                     <item.icon size={24} />
-                  </div>
+                  </motion.div>
 
                   <div>
                     <h3 className="text-xl font-semibold text-slate-900 mb-2">
@@ -65,19 +83,30 @@ export default function VoicebotTechStack() {
                       {item.desc}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT */}
-          <div className="relative">
-            <img
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <motion.img
+              whileHover={{ y: -4 }}
+              transition={{ duration: 0.3 }}
               src={voicebotDardboard}
               alt=""
               className="rounded-4xl shadow-2xl border border-slate-200"
             />
-          </div>
+
+            {/* Soft background glow */}
+            <div className="absolute -z-10 bottom-0 right-0 w-64 h-64 bg-blue-100/40 blur-3xl rounded-full" />
+          </motion.div>
         </div>
       </Container>
     </section>

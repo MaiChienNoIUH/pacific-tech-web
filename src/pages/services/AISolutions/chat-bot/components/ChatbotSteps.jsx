@@ -48,8 +48,8 @@ export default function ChatbotSteps() {
       <Container className="relative z-10">
         {/* Header */}
         <div className="text-left max-w-2xl mb-24">
-          <span className="text-sm font-bold tracking-widest text-blue-600 uppercase bg-white/10 px-4 py-1.5 mb-4 rounded-full inline-block border border-white/10 backdrop-blur-xs">
-            INTEGRATION PROCESS
+          <span className="text-sm font-medium tracking-widest text-blue-600 bg-white/10 px-4 py-1.5 mb-4 rounded-full inline-block border border-white/10 backdrop-blur-xs">
+            Integration Process
           </span>
           <h2 className="text-4xl font-bold text-white! mt-5 tracking-tight">
             Our Approach to Chatbot Integration

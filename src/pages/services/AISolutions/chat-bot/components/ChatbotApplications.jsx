@@ -43,8 +43,8 @@ export default function ChatbotApplications() {
       <Container>
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-100/60 px-4 py-1.5 mb-2 rounded-full inline-block">
-            INDUSTRIES
+          <span className="text-sm font-medium tracking-widest text-blue-700 bg-blue-100/60 px-4 py-1.5 mb-2 rounded-full inline-block">
+            Industry Applications
           </span>
           <h2 className="text-4xl font-bold text-slate-900 mt-4 tracking-tight">
             Tailored For Regulated Markets

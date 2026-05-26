@@ -11,7 +11,7 @@ export default function AICore() {
           Core AI Solutions
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4 font-semibold">
           {items.map((item, i) => (
             <div
               key={i}

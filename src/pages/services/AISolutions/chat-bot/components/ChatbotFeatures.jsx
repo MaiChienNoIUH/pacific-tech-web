@@ -41,8 +41,8 @@ export default function ChatbotFeatures() {
         <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-12 lg:gap-16 items-start">
           
           <div className="text-left sticky top-24 p-8 rounded-4xl bg-linear-to-br from-[#d7e5ff]/95 via-[#d8dfff]/92 to-[#ecdfff]/92 border border-[#b7c4ff]/55 shadow-[0_30px_90px_rgba(79,70,229,0.18)] backdrop-blur-md">
-            <span className="text-xs font-bold tracking-widest text-indigo-600 uppercase bg-indigo-100/60 px-4 py-1.5 mb-4 rounded-full inline-block border border-indigo-200/40 shadow-2xs">
-              CAPABILITIES
+            <span className="text-sm font-medium tracking-widest text-indigo-600 bg-indigo-100/60 px-4 py-1.5 mb-4 rounded-full inline-block border border-indigo-200/40 shadow-2xs">
+              Capabilities
             </span>
             <h2 className="text-4xl font-bold text-slate-900 mt-4 leading-tight tracking-tight">
               What Our Chatbot Can Do
