@@ -4,25 +4,43 @@ import Container from "../../../../../components/ui/Container";
 import processImg from "../../../../../assets/insourcing-process2.jpg";
 
 const steps = [
-  { title: "Requirement Analysis", desc: "Understand goals and project scope." },
-  { title: "Team Setup", desc: "Assign and structure delivery team." },
-  { title: "Execution", desc: "Start development with agile workflow." },
-  { title: "Quality Assurance", desc: "Testing and validation across all modules." },
-  { title: "Delivery & Support", desc: "Deploy and maintain production systems." },
+  {
+    step: "01",
+    title: "Discovery Call",
+    desc: "Understand your business goals, workflows, and staffing requirements.",
+  },
+  {
+    step: "02",
+    title: "Talent Matching",
+    desc: "Identify remote professionals aligned with your stack and culture.",
+  },
+  {
+    step: "03",
+    title: "Candidate Interviews",
+    desc: "Review and interview shortlisted candidates with your internal team.",
+  },
+  {
+    step: "04",
+    title: "Team Onboarding",
+    desc: "Quickly integrate remote professionals into your operations and tools.",
+  },
 ];
 
-export default function OutsourcingProcess() {
+
+export default function RemoteStaffingProcess() {
   return (
     <section className="py-20 bg-[#13203F] text-white relative overflow-hidden">
       <Container>
         {/* HEADER */}
-        <span className="text-sm font-medium text-cyan-300 bg-cyan-400/10 border border-cyan-300/20 px-4 py-2 mb-3 rounded-full inline-block backdrop-blur-sm">
-          Implementation Process
-        </span>
+       <div className="max-w-3xl mb-20">
+            <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-sm font-semibold text-cyan-300">
+              Hiring Process
+            </span>
 
-        <h2 className="text-4xl! font-bold mb-16!">
-          Build Faster with Our Outsourcing Method
-        </h2>
+            <h2 className="mt-7 text-4xl! font-bold leading-tight">
+              A Streamlined Remote Staffing Workflow
+            </h2>
+          </div>
 
         {/* GRID 2 CỘT */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

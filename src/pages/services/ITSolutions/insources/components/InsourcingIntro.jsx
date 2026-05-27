@@ -19,7 +19,7 @@ export default function InsourcingIntro() {
             initial={{ opacity: 0, y: 35 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.65 }}
+            transition={{ duration: 0.8 }}
           >
             <span className="inline-flex items-center px-4 py-1.5 mb-3 rounded-full bg-cyan-50 border border-cyan-100 text-sm font-semibold tracking-wide text-cyan-700 shadow-sm">
               Strategic Team Extension

@@ -1,7 +1,7 @@
 import Navbar from "../../../../components/layout/Navbar";
 import Footer from "../../../../components/layout/Footer";
 
-import AIHero from "../components/ITHero";
+import ITHero from "../components/ITHero";
 
 import OutsourcingIntro from "./components/OutsourcingIntro";
 import OutsourcingSolutions from "./components/OutsourcingSolutions";
@@ -16,7 +16,7 @@ export default function OutsourcingServicesPage() {
     <>
       <Navbar />
 
-      <AIHero />
+      <ITHero />
 
       <OutsourcingIntro />
       <OutsourcingSolutions />

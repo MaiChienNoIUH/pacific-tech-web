@@ -4,10 +4,15 @@ import Button from "../../../../../components/ui/Button";
 
 export default function OutsourcingCTA() {
   return (
-    <section className="py-28 bg-linear-to-r bg-slate-950 text-white">
+    <section className="py-28 bg-slate-950 text-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,#0B1744,#050A1F)]" />
       <Container>
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold">
+         <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="text-center relative z-10"
+        >
+          <h2 className="text-4xl! font-bold">
             Ready to Outsource Your Engineering Delivery?
           </h2>
 
@@ -21,7 +26,7 @@ export default function OutsourcingCTA() {
               Talk to Us
             </Button>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

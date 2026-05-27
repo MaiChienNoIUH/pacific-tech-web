@@ -13,7 +13,7 @@ export default function InsourcingCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center relative z-10"
         >
-          <h2 className="text-5xl font-bold">
+          <h2 className="text-4xl! font-bold">
             Ready to Scale Your Engineering Team?
           </h2>
 

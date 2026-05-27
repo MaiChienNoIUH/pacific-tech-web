@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Container from "../../../../../components/ui/Container";
 
-import staffingImg from "../../../../../assets/remote-staffing-overview.webp";
+import staffingImg from "../../../../../assets/remote-staffing-overview.jpg";
 
 export default function RemoteStaffingOverview() {
   return (
@@ -20,11 +20,11 @@ export default function RemoteStaffingOverview() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="inline-flex px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-100 text-sm font-semibold text-cyan-700 shadow-sm">
+            <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-cyan-50 border border-cyan-100 text-sm font-semibold text-cyan-700 shadow-sm">
               Remote Staffing Solutions
             </span>
 
-            <h2 className="mt-7 text-5xl font-bold text-slate-900 leading-[1.05] tracking-tight">
+            <h2 className="mt-7 text-4xl! font-bold text-slate-900 leading-[1.05] tracking-tight">
               Build Remote Teams Without Traditional Hiring Bottlenecks
             </h2>
 
