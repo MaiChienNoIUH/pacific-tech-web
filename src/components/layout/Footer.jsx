@@ -1,5 +1,6 @@
 import Container from "../ui/Container";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -8,9 +9,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-10">
           <div className="flex justify-between items-start">
             <div>
-              <h2 className="font-bold mb-4 text-7xl">
-                Pacific <span className="text-blue-400 text-4xl">Tech</span>
-              </h2>
+              <Link to="/" className="inline-block hover:opacity-90 transition">
+                <h2 className="font-bold mb-4 text-7xl">
+                  Pacific <span className="text-blue-400 text-4xl">Tech</span>
+                </h2>
+              </Link>
               <p className="text-gray-400">Navigating the Future of Software</p>
 
               {/* SOCIAL */}
@@ -36,71 +39,83 @@ export default function Footer() {
             </div>
 
             <div>
-              <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">
+              <Link
+                to="/careers"
+                className="block font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline"
+              >
                 Careers
-              </p>
-              <p className="font-semibold mb-3 text-blue-400 text-[20px] cursor-pointer hover:underline">
+              </Link>
+              <Link
+                to="/about"
+                className="block font-semibold mb-3 text-blue-400 text-[20px] cursor-pointer hover:underline"
+              >
                 About Us
-              </p>
+              </Link>
             </div>
           </div>
 
           {/* Column */}
           <div>
-            <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">
+            <Link
+              to="/services"
+              className="block font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline"
+            >
               Services
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </Link>
+            <Link to="/services/ai-solutions/chatbots" className="block text-gray-300 cursor-pointer hover:underline">
               Chatbots
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </Link>
+            <Link to="/services/ai-solutions/voicebots" className="block text-gray-300 cursor-pointer hover:underline">
               Voicebots
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </Link>
+            <Link to="/services/ai-solutions/voice-recognition" className="block text-gray-300 cursor-pointer hover:underline">
               Voice recognition
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </Link>
+            <Link to="/services/it-solutions/remote-staffing" className="block text-gray-300 cursor-pointer hover:underline">
               Remote Staffing For SMBs - Startups
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </Link>
+            <Link to="/services/it-solutions/software-testing" className="block text-gray-300 cursor-pointer hover:underline">
               Software Testing
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </Link>
+            <Link to="/services/it-solutions/web-development" className="block text-gray-300 cursor-pointer hover:underline">
               Web Application Development
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </Link>
+            <Link to="/services/it-solutions/mobile-apps" className="block text-gray-300 cursor-pointer hover:underline">
               Mobile App Development Services
-            </p>
+            </Link>
           </div>
 
           <div>
-            <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">
+            <Link
+              to="#"
+              className="block font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline"
+            >
               Blog
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </Link>
+            <a className="block text-gray-300 cursor-pointer hover:underline">
               AI & Blockchain Trends
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </a>
+            <a className="block text-gray-300 cursor-pointer hover:underline">
               Thought Leadership Articles
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </a>
+            <a className="block text-gray-300 cursor-pointer hover:underline">
               Success Stories & Client Spotlights
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </a>
+            <a className="block text-gray-300 cursor-pointer hover:underline">
               Industry Case Studies{" "}
-            </p>
+            </a>
           </div>
 
           <div>
-            <p className="font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">
+            <span className="block font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline">
               Legal
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </span>
+            <a className="block text-gray-300 cursor-pointer hover:underline">
               Privacy Policy
-            </p>
-            <p className="text-gray-300 cursor-pointer hover:underline">
+            </a>
+            <a className="block text-gray-300 cursor-pointer hover:underline">
               Terms
-            </p>
+            </a>
           </div>
         </div>
 
