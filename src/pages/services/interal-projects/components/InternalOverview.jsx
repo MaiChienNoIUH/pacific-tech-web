@@ -38,14 +38,11 @@ const items = [
 
 export default function InternalOverview() {
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-24 pb-12 bg-slate-50">
       <Container>
-        {/* Bento Grid layout bọc tổng thể */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 auto-rows-[220px]">
-          
-          {/* Ô TIÊU ĐỀ: Chiếm vị trí góc lớn nhất trong hệ bento (4 cột rộng) */}
-          <div className="lg:col-span-4 lg:row-span-1 flex flex-col justify-center p-8 bg-transparent text-left">
-            <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">
+          <div className="lg:col-span-4 lg:row-span-1 flex-col justify-center p-8 bg-transparent text-left inline-block">
+            <span className="text-sm font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-4 py-1.5 mb-4 rounded-full inline-block border border-blue-100">
               OUR FOCUS
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 leading-tight tracking-tight">
@@ -55,11 +52,9 @@ export default function InternalOverview() {
               Pacific Tech Ecosystem
             </p>
           </div>
-
-          {/* CÁC Ô TÍNH NĂNG CON: Tự sắp xếp điền vào khoảng trống bất đối xứng */}
           {items.map((item, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className={`
                 text-left p-8 rounded-3xl border border-slate-200/60 bg-white
                 flex flex-col justify-between transition-all duration-300
@@ -68,7 +63,9 @@ export default function InternalOverview() {
               `}
             >
               {/* Top Row: Icon Box */}
-              <div className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${item.iconColor}`}>
+              <div
+                className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110 ${item.iconColor}`}
+              >
                 <item.icon size={22} />
               </div>
 
@@ -83,7 +80,6 @@ export default function InternalOverview() {
               </div>
             </div>
           ))}
-
         </div>
       </Container>
     </section>

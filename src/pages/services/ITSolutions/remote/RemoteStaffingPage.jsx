@@ -3,7 +3,7 @@
 import Navbar from "../../../../components/layout/Navbar";
 import Footer from "../../../../components/layout/Footer";
 
-import AIHero from "../components/ITHero";
+import ITHero from "../components/ITHero";
 
 import RemoteStaffingOverview from "./components/RemoteStaffingOverview";
 import RemoteStaffingBenefits from "./components/RemoteStaffingBenefits";
@@ -19,7 +19,7 @@ export default function RemoteStaffingPage() {
     <>
       <Navbar />
 
-      <AIHero />
+      <ITHero />
 
       <RemoteStaffingOverview />
       <RemoteStaffingBenefits />

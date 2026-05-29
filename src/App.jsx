@@ -13,6 +13,9 @@ import VoiceRecognitionPage from "./pages/services/AISolutions/voice-recognition
 import InsourcingPage from "./pages/services/ITSolutions/insources/InsourcingServicesPage";
 import OutsourcePage from "./pages/services/ITSolutions/outsources/OutsourcingServicesPage";
 import RemoteStaffingPage from "./pages/services/ITSolutions/remote/RemoteStaffingPage";
+import SoftwareTestingPage from "./pages/services/ITSolutions/software-testing/SoftwareTestingPage";
+import WebDevelopmentPage from "./pages/services/ITSolutions/web-development/WebDevelopmentPage";
+import MobileAppPage from "./pages/services/ITSolutions/mobile-apps/MobileAppPage";
 
 import ScrollToTop from "./components/layout/ScrollToTop";
 
@@ -37,6 +40,9 @@ function App() {
         <Route path="/services/it-solutions/insourcing" element={<InsourcingPage />} />
         <Route path="/services/it-solutions/outsourcing" element={<OutsourcePage />} />
         <Route path="/services/it-solutions/remote-staffing" element={<RemoteStaffingPage />} />
+        <Route path="/services/it-solutions/software-testing" element={<SoftwareTestingPage />} />
+        <Route path="/services/it-solutions/web-development" element={<WebDevelopmentPage />} />
+        <Route path="/services/it-solutions/mobile-apps" element={<MobileAppPage />} />
       </Routes>
     </BrowserRouter>
   );

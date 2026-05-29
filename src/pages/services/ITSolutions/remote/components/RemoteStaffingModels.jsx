@@ -42,7 +42,7 @@ export default function RemoteStaffingModels() {
               Service Models
             </span>
 
-            <h2 className="mt-7 text-4xl! font-bold">
+            <h2 className="mt-7 text-3xl! font-bold">
               Everything You Need to Build Distributed Teams
             </h2>
           </div>

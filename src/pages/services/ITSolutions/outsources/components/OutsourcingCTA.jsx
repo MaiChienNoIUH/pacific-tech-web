@@ -12,6 +12,9 @@ export default function OutsourcingCTA() {
           whileInView={{ opacity: 1, y: 0 }}
           className="text-center relative z-10"
         >
+          <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 text-sm font-semibold">
+            Let’s talk about your project
+          </span>
           <h2 className="text-4xl! font-bold">
             Ready to Outsource Your Engineering Delivery?
           </h2>
