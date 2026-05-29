@@ -17,6 +17,14 @@ export default function Navbar() {
   const [openInternal, setOpenInternal] = useState(false);
   const [activeService, setActiveService] = useState("ai");
 
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+    setOpenMobileServices(false);
+    setOpenAi(false);
+    setOpenIt(false);
+    setOpenInternal(false);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -219,7 +227,7 @@ export default function Navbar() {
             <nav className="flex flex-col gap-6 text-xl font-semibold text-black">
               <Link
                 to="/about"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
                 className="border-b border-gray-100 pb-4"
               >
                 About us
@@ -227,19 +235,25 @@ export default function Navbar() {
 
               <div className="border-b border-gray-100 pb-4">
                 {/* MAIN SERVICES */}
-                <button
-                  onClick={() => setOpenMobileServices(!openMobileServices)}
-                  className="w-full flex items-center justify-between text-xl font-semibold text-black"
-                >
-                  <span>Services</span>
+                <div className="w-full flex items-center justify-between text-xl font-semibold text-black">
+                  <Link to="/services" onClick={closeMobileMenu} className="flex-1 pr-4">
+                    Services
+                  </Link>
 
-                  <ChevronDown
-                    size={22}
-                    className={`transition-transform duration-300 ${
-                      openMobileServices ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
+                  <button
+                    type="button"
+                    onClick={() => setOpenMobileServices(!openMobileServices)}
+                    className="shrink-0 p-1 -mr-1"
+                    aria-label="Toggle Services submenu"
+                  >
+                    <ChevronDown
+                      size={22}
+                      className={`transition-transform duration-300 ${
+                        openMobileServices ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                </div>
 
                 <AnimatePresence>
                   {openMobileServices && (
@@ -252,24 +266,32 @@ export default function Navbar() {
                     >
                       {/* AI SOLUTIONS */}
                       <div className="bg-gray-50 rounded-2xl overflow-hidden">
-                        <button
-                          onClick={() => setOpenAi(!openAi)}
-                          className="w-full flex items-center justify-between px-5 py-4"
-                        >
-                          <div className="flex items-center gap-3">
-                            <Bot className="text-blue-600" size={22} />
+                        <div className="w-full flex items-center justify-between px-5 py-4 gap-4">
+                          <Link
+                            to="/services/ai-solutions"
+                            onClick={closeMobileMenu}
+                            className="flex items-center gap-3 flex-1 min-w-0"
+                          >
+                            <Bot className="text-blue-600 shrink-0" size={22} />
                             <span className="font-semibold text-[17px] text-black">
                               AI Solutions
                             </span>
-                          </div>
+                          </Link>
 
-                          <ChevronDown
-                            size={18}
-                            className={`transition-transform duration-300 ${
-                              openAi ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
+                          <button
+                            type="button"
+                            onClick={() => setOpenAi(!openAi)}
+                            className="shrink-0 p-1 -mr-1"
+                            aria-label="Toggle AI Solutions submenu"
+                          >
+                            <ChevronDown
+                              size={18}
+                              className={`transition-transform duration-300 ${
+                                openAi ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                        </div>
 
                         <AnimatePresence>
                           {openAi && (
@@ -280,9 +302,9 @@ export default function Navbar() {
                               className="overflow-hidden"
                             >
                               <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
-                                <Link to="/services/ai-solutions/chatbots">Chatbots</Link>
-                                <Link to="/services/ai-solutions/voicebots">Voicebots</Link>
-                                <Link to="/services/ai-solutions/voice-recognition">Voice Recognition</Link>
+                                <Link to="/services/ai-solutions/chatbots" onClick={closeMobileMenu}>Chatbots</Link>
+                                <Link to="/services/ai-solutions/voicebots" onClick={closeMobileMenu}>Voicebots</Link>
+                                <Link to="/services/ai-solutions/voice-recognition" onClick={closeMobileMenu}>Voice Recognition</Link>
                               </div>
                             </motion.div>
                           )}
@@ -291,24 +313,32 @@ export default function Navbar() {
 
                       {/* IT SOLUTIONS */}
                       <div className="bg-gray-50 rounded-2xl overflow-hidden">
-                        <button
-                          onClick={() => setOpenIt(!openIt)}
-                          className="w-full flex items-center justify-between px-5 py-4"
-                        >
-                          <div className="flex items-center gap-3">
-                            <Laptop className="text-blue-600" size={22} />
+                        <div className="w-full flex items-center justify-between px-5 py-4 gap-4">
+                          <Link
+                            to="/services/it-solutions"
+                            onClick={closeMobileMenu}
+                            className="flex items-center gap-3 flex-1 min-w-0"
+                          >
+                            <Laptop className="text-blue-600 shrink-0" size={22} />
                             <span className="font-semibold text-[17px] text-black">
                               IT Solutions
                             </span>
-                          </div>
+                          </Link>
 
-                          <ChevronDown
-                            size={18}
-                            className={`transition-transform duration-300 ${
-                              openIt ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
+                          <button
+                            type="button"
+                            onClick={() => setOpenIt(!openIt)}
+                            className="shrink-0 p-1 -mr-1"
+                            aria-label="Toggle IT Solutions submenu"
+                          >
+                            <ChevronDown
+                              size={18}
+                              className={`transition-transform duration-300 ${
+                                openIt ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                        </div>
 
                         <AnimatePresence>
                           {openIt && (
@@ -319,12 +349,12 @@ export default function Navbar() {
                               className="overflow-hidden"
                             >
                               <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
-                                <Link to="/services/it-solutions/insourcing">Insourcing Services</Link>
-                                <Link to="/services/it-solutions/outsourcing">Outsourcing Services</Link>
-                                <Link to="/services/it-solutions/remote-staffing">Remote Staffing For SMBs - Startups</Link>
-                                <Link to="/services/it-solutions/software-testing">Software Testing</Link>
-                                <Link to="/services/it-solutions/web-development">Web Development</Link>
-                                <Link to="/services/it-solutions/mobile-apps">Mobile Apps</Link>
+                                <Link to="/services/it-solutions/insourcing" onClick={closeMobileMenu}>Insourcing Services</Link>
+                                <Link to="/services/it-solutions/outsourcing" onClick={closeMobileMenu}>Outsourcing Services</Link>
+                                <Link to="/services/it-solutions/remote-staffing" onClick={closeMobileMenu}>Remote Staffing For SMBs - Startups</Link>
+                                <Link to="/services/it-solutions/software-testing" onClick={closeMobileMenu}>Software Testing</Link>
+                                <Link to="/services/it-solutions/web-development" onClick={closeMobileMenu}>Web Development</Link>
+                                <Link to="/services/it-solutions/mobile-apps" onClick={closeMobileMenu}>Mobile Apps</Link>
                               </div>
                             </motion.div>
                           )}
@@ -333,24 +363,32 @@ export default function Navbar() {
 
                       {/* INTERNAL PROJECTS */}
                       <div className="bg-gray-50 rounded-2xl overflow-hidden">
-                        <button
-                          onClick={() => setOpenInternal(!openInternal)}
-                          className="w-full flex items-center justify-between px-5 py-4"
-                        >
-                          <div className="flex items-center gap-3">
-                            <FolderKanban className="text-blue-600" size={22} />
+                        <div className="w-full flex items-center justify-between px-5 py-4 gap-4">
+                          <Link
+                            to="/services/internal-projects"
+                            onClick={closeMobileMenu}
+                            className="flex items-center gap-3 flex-1 min-w-0"
+                          >
+                            <FolderKanban className="text-blue-600 shrink-0" size={22} />
                             <span className="font-semibold text-[17px] text-black">
                               Internal Projects
                             </span>
-                          </div>
+                          </Link>
 
-                          <ChevronDown
-                            size={18}
-                            className={`transition-transform duration-300 ${
-                              openInternal ? "rotate-180" : ""
-                            }`}
-                          />
-                        </button>
+                          <button
+                            type="button"
+                            onClick={() => setOpenInternal(!openInternal)}
+                            className="shrink-0 p-1 -mr-1"
+                            aria-label="Toggle Internal Projects submenu"
+                          >
+                            <ChevronDown
+                              size={18}
+                              className={`transition-transform duration-300 ${
+                                openInternal ? "rotate-180" : ""
+                              }`}
+                            />
+                          </button>
+                        </div>
 
                         <AnimatePresence>
                           {openInternal && (
@@ -361,8 +399,8 @@ export default function Navbar() {
                               className="overflow-hidden"
                             >
                               <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
-                                <Link to="#">Working Utilities</Link>
-                                <Link to="#">Games</Link>
+                                <Link to="#" onClick={closeMobileMenu}>Working Utilities</Link>
+                                <Link to="#" onClick={closeMobileMenu}>Games</Link>
                               </div>
                             </motion.div>
                           )}
@@ -375,14 +413,14 @@ export default function Navbar() {
 
               <Link
                 to="/careers"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
                 className="border-b border-gray-100 pb-4"
               >
                 Careers
               </Link>
               <Link
                 to="#"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
                 className="border-b border-gray-100 pb-4"
               >
                 Blog
