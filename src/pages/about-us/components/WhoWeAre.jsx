@@ -26,7 +26,7 @@ export default function WhoWeAre() {
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <p className="uppercase text-blue-500 font-semibold tracking-widest mb-4">
+            <p className="uppercase text-blue-500 font-bold tracking-widest mb-4">
               Who We Are
             </p>
 

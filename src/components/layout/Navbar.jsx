@@ -15,7 +15,7 @@ export default function Navbar() {
   const [openAi, setOpenAi] = useState(false);
   const [openIt, setOpenIt] = useState(false);
   const [openInternal, setOpenInternal] = useState(false);
-    const [activeService, setActiveService] = useState("ai");
+  const [activeService, setActiveService] = useState("ai");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,7 +65,10 @@ export default function Navbar() {
               onMouseEnter={() => setOpenService(true)}
               onMouseLeave={() => setOpenService(false)}
             >
-              <div className="flex items-center gap-1 cursor-pointer hover:text-blue-400 transition">
+              <Link
+                to="/services"
+                className="flex items-center gap-1 cursor-pointer hover:text-blue-400 transition"
+              >
                 Services
                 <ChevronDown
                   size={16}
@@ -73,7 +76,7 @@ export default function Navbar() {
                     openService ? "rotate-180" : ""
                   }`}
                 />
-              </div>
+              </Link>
 
               <div
                 className={`absolute left-1/2 -translate-x-1/2 mt-6 w-225 bg-white text-black rounded-2xl shadow-2xl p-10
@@ -86,24 +89,24 @@ export default function Navbar() {
                 <div className="grid grid-cols-3 gap-10">
                   <div>
                     <a
-                      href="#"
+                      href="/services/ai-solutions"
                       className="block text-blue-600 font-semibold mb-4 hover:underline"
                     >
                       AI Solutions
                     </a>
                     <ul className="space-y-2 text-gray-700">
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/ai-solutions/chatbots" className="hover:text-blue-500 transition">
                           Chatbots
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/ai-solutions/voicebots" className="hover:text-blue-500 transition">
                           Voicebots
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/ai-solutions/voice-recognition" className="hover:text-blue-500 transition">
                           Voice recognition
                         </a>
                       </li>
@@ -112,39 +115,39 @@ export default function Navbar() {
 
                   <div>
                     <a
-                      href="#"
+                      href="/services/it-solutions"
                       className="block text-blue-600 font-semibold mb-4 hover:underline"
                     >
                       IT Solutions
                     </a>
                     <ul className="space-y-2 text-gray-700">
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/insourcing" className="hover:text-blue-500 transition">
                           Insourcing Services
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/outsourcing" className="hover:text-blue-500 transition">
                           Outsourcing Services
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
-                          Remote Staffing
+                        <a href="/services/it-solutions/remote-staffing" className="hover:text-blue-500 transition">
+                          Remote Staffing For SMBs - Startups
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/software-testing" className="hover:text-blue-500 transition">
                           Software Testing
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/web-development" className="hover:text-blue-500 transition">
                           Web Development
                         </a>
                       </li>
                       <li>
-                        <a href="#" className="hover:text-blue-500 transition">
+                        <a href="/services/it-solutions/mobile-apps" className="hover:text-blue-500 transition">
                           Mobile Apps
                         </a>
                       </li>
@@ -153,7 +156,7 @@ export default function Navbar() {
 
                   <div>
                     <a
-                      href="#"
+                      href="/services/internal-projects"
                       className="block text-blue-600 font-semibold mb-4 hover:underline"
                     >
                       Internal Projects
@@ -277,9 +280,9 @@ export default function Navbar() {
                               className="overflow-hidden"
                             >
                               <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
-                                <Link to="#">Chatbots</Link>
-                                <Link to="#">Voicebots</Link>
-                                <Link to="#">Voice Recognition</Link>
+                                <Link to="/services/ai-solutions/chatbots">Chatbots</Link>
+                                <Link to="/services/ai-solutions/voicebots">Voicebots</Link>
+                                <Link to="/services/ai-solutions/voice-recognition">Voice Recognition</Link>
                               </div>
                             </motion.div>
                           )}
@@ -316,12 +319,12 @@ export default function Navbar() {
                               className="overflow-hidden"
                             >
                               <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
-                                <Link to="#">Insourcing Services</Link>
-                                <Link to="#">Outsourcing Services</Link>
-                                <Link to="#">Remote Staffing</Link>
-                                <Link to="#">Software Testing</Link>
-                                <Link to="#">Web Development</Link>
-                                <Link to="#">Mobile Apps</Link>
+                                <Link to="/services/it-solutions/insourcing">Insourcing Services</Link>
+                                <Link to="/services/it-solutions/outsourcing">Outsourcing Services</Link>
+                                <Link to="/services/it-solutions/remote-staffing">Remote Staffing For SMBs - Startups</Link>
+                                <Link to="/services/it-solutions/software-testing">Software Testing</Link>
+                                <Link to="/services/it-solutions/web-development">Web Development</Link>
+                                <Link to="/services/it-solutions/mobile-apps">Mobile Apps</Link>
                               </div>
                             </motion.div>
                           )}

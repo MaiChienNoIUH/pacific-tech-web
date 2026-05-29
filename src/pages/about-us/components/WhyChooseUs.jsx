@@ -53,7 +53,7 @@ export default function WhyChooseUs() {
     <section className="py-24 bg-gray-50">
       <Container>
         <div className="text-center mb-16">
-          <p className="uppercase text-blue-500 tracking-widest font-semibold mb-4">
+          <p className="uppercase text-blue-500 tracking-widest font-bold mb-4">
             Why Choose Us
           </p>
 
@@ -81,7 +81,7 @@ export default function WhyChooseUs() {
                   <Icon size={26} />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
 
                 <p className="text-gray-500 leading-relaxed">
                   {item.description}
