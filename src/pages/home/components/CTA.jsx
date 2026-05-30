@@ -76,41 +76,40 @@ export default function CTA() {
     return Object.keys(newErrors).length === 0;
   };
 
- // submit
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  // submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  if (!validate()) return;
+    if (!validate()) return;
 
-  setIsLoading(true);
+    setIsLoading(true);
 
-  try {
-    await emailjs.send(
-      "service_bdo3glt",
-      "template_7jct7na",
-      {
-        name: form.name,
-        email: form.email,
-        message: form.message,
-      },
-      "oszaavOkNtalhDq03" 
-    );
+    try {
+      await emailjs.send(
+        "service_bdo3glt",
+        "template_7jct7na",
+        {
+          name: form.name,
+          email: form.email,
+          message: form.message,
+        },
+        "oszaavOkNtalhDq03",
+      );
 
-    setIsLoading(false);
-    setIsSubmitted(true);
+      setIsLoading(false);
+      setIsSubmitted(true);
 
-    setForm({
-      name: "",
-      email: "",
-      message: "",
-    });
-
-  } catch (error) {
-    console.log("Email send error:", error);
-    setIsLoading(false);
-    alert("Failed to send message");
-  }
-};
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.log("Email send error:", error);
+      setIsLoading(false);
+      alert("Failed to send message");
+    }
+  };
 
   return (
     <section className="relative py-24 bg-linear-to-br from-[#0b1a3a] to-[#0f2c6b] overflow-hidden">
