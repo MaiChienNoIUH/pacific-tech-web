@@ -6,7 +6,7 @@ import WhyJoinUs from "./components/WhyJoinUs";
 import Benefits from "./components/Benefits";
 import OpenPositions from "./components/OpenPositions";
 import HiringProcess from "./components/HiringProcess";
-import CTA from "./components/CTA";
+import CTA from "../home/components/CTA";
 
 export default function Career() {
   return (

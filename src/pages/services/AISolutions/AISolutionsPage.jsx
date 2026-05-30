@@ -5,7 +5,7 @@ import AIHero from "./components/AIHero";
 import AIOverview from "./components/AIOverview";
 import AIUseCases from "./components/AIUseCases";
 import WhyAI from "./components/WhyAI";
-import CTA from "./components/CTA";
+import CTA from "../../home/components/CTA";
 import AICore from "./components/AICore";
 
 export default function AISolutionsPage() {

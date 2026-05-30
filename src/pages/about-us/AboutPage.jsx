@@ -6,7 +6,7 @@ import WhyChooseUs from "./components/WhyChooseUs";
 import Timeline from "./components/Timeline";
 import TeamStats from "./components/TeamStats";
 // import Partner from "./components/Partner";
-import CTA from "./components/CTA";
+import CTA from "../home/components/CTA";
 import Navbar from "../../components/layout/Navbar";
 import Footer from "../../components/layout/Footer";
 

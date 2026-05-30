@@ -1,6 +1,7 @@
 import InternalHero from "./components/InternalHero";
 import InternalOverview from "./components/InternalOverview";
 import InternalServicesList from "./components/InternalServicesList";
+import CTA from "../../home/components/CTA";
 
 import Navbar from "../../../components/layout/Navbar";
 import Footer from "../../../components/layout/Footer";
@@ -12,6 +13,7 @@ export default function InternalProjectsPage() {
       <InternalHero />
       <InternalOverview />
       <InternalServicesList />
+      <CTA />
       <Footer />
     </main>
   );
