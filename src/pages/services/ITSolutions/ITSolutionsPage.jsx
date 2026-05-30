@@ -2,7 +2,7 @@ import ITHero from "./components/ITHero";
 import ITOverview from "./components/ITOverview";
 import ITServicesList from "./components/ITServicesList";
 import ITAbout from "./components/ITAbout";
-import CTA from "./components/CTA";
+import CTA from "../../home/components/CTA";
 
 import Navbar from "../../../components/layout/Navbar";
 import Footer from "../../../components/layout/Footer";
