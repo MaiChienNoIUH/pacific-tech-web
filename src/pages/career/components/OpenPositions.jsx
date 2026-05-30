@@ -200,7 +200,7 @@ export default function OpenPositions() {
 
       setToast({
         show: true,
-        message: "Nộp đơn thành công!",
+        message: "Application submitted successfully!",
       });
 
       setSelectedJob(null);

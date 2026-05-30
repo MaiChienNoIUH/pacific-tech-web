@@ -1,31 +1,39 @@
 import Container from "../../../components/ui/Container";
 import Button from "../../../components/ui/Button";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { link } from "framer-motion/client";
 
 const services = [
   {
     title: "Chatbots",
     desc: "AI-powered chatbots that automate conversations, enhance customer support, and improve engagement across multiple digital platforms.",
+    link: "/services/ai-solutions/chatbots",
   },
   {
     title: "Voice Recognition",
     desc: "Advanced speech recognition systems built for real-time processing, high accuracy, and seamless integration into modern software solutions and AI-driven workflows.",
+    link: "/services/ai-solutions/voice-recognition",
   },
   {
     title: "Remote Staffing for SMBs & Startups",
     desc: "Flexible remote development teams tailored for startups and SMBs, helping you scale faster with skilled engineers while reducing operational overhead and hiring complexity.",
+    link: "/services/it-solutions/remote-staffing",
   },
   {
     title: "Software Testing",
     desc: "Comprehensive testing solutions to ensure your systems are reliable, secure, and perform optimally. We cover everything from manual testing to automated and performance testing.",
+    link: "/services/it-solutions/software-testing",
   },
   {
     title: "Web Development",
     desc: "Modern, scalable web applications built with the latest technologies, focusing on performance, security, and delivering exceptional user experiences across all devices.",
+    link: "/services/it-solutions/web-development",
   },
   {
     title: "Mobile Apps",
     desc: "High-performance iOS and Android applications designed for scalability, usability, and long-term growth, ensuring smooth performance and engaging user experiences.",
+    link: "/services/it-solutions/mobile-apps",
   },
 ];
 
@@ -35,33 +43,34 @@ export default function Services() {
       <Container>
         {/* TITLE */}
         <motion.div
-  className="mb-8"
-  initial={{ opacity: 0, x: -80 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.6 }}
-  viewport={{ once: true }}
->
+          className="mb-8"
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <h2 className="text-4xl font-bold mb-4">
             <span className="text-blue-500">OUR CORE SERVICES</span>
           </h2>
           <p className="text-gray-500 max-w-xl">
-            Discover the solutions we offer to help your business grow, innovate,
-            and stay ahead in a rapidly evolving digital world.
+            Discover the solutions we offer to help your business grow,
+            innovate, and stay ahead in a rapidly evolving digital world.
           </p>
         </motion.div>
 
         {/* LIST */}
         <motion.div
-  className="w-full border-t border-gray-200"
-  initial={{ opacity: 0, x: -100 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, delay: 0.2 }}
-  viewport={{ once: true }}
->
+          className="w-full border-t border-gray-200"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           {services.map((item, index) => (
-            <div
+            <Link
               key={index}
-              className="group border-b border-gray-200 transition-all duration-300"
+              to={item.link}
+              className="block group border-b border-gray-200 transition-all duration-300"
             >
               {/* HEADER */}
               <div className="flex justify-between items-center py-6 px-2 cursor-pointer group-hover:bg-gray-50 transition">
@@ -76,23 +85,23 @@ export default function Services() {
 
               {/* CONTENT */}
               <div className="max-h-0 group-hover:max-h-40 overflow-hidden transition-all duration-500 px-2">
-                <p className="text-gray-600 pb-4">
-                  {item.desc}
-                </p>
+                <p className="text-gray-600 pb-4">{item.desc}</p>
 
                 <Button className="mb-6 bg-blue-50 text-blue-600 hover:bg-blue-100 text-sm px-4 py-2">
                   View more →
                 </Button>
               </div>
-            </div>
+            </Link>
           ))}
         </motion.div>
 
         {/* GLOBAL CTA */}
         <div className="mt-16 text-center">
-          <Button className="bg-blue-500 text-white hover:bg-blue-600 px-8 py-3">
-            Explore all services →
-          </Button>
+          <Link to="/services">
+            <Button className="bg-blue-500 text-white hover:bg-blue-600 px-8 py-3">
+              Explore all services →
+            </Button>
+          </Link>
         </div>
       </Container>
     </section>
