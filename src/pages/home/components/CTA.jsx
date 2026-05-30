@@ -114,8 +114,8 @@ export default function CTA() {
   return (
     <section className="relative py-24 bg-linear-to-br from-[#0b1a3a] to-[#0f2c6b] overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-400/20 blur-3xl rounded-full"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-300/20 blur-3xl rounded-full"></div>
+      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-400/20 blur-3xl rounded-full pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-300/20 blur-3xl rounded-full pointer-events-none"></div>
 
       <Container>
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -239,7 +239,7 @@ export default function CTA() {
                   {/* BUTTON */}
                   <Button
                     type="submit"
-                    className="w-full bg-blue-500 text-white hover:bg-blue-600 transition-colors"
+                    className="w-full bg-blue-500 text-white hover:bg-blue-600 transition-colors relative z-10"
                     disabled={isLoading}
                   >
                     {isLoading ? (
@@ -254,14 +254,12 @@ export default function CTA() {
                 </form>
               </>
             ) : (
-              // GIAO DIỆN THÔNG BÁO THÀNH CÔNG (Y CHANG ẢNH CỦA BẠN)
               <motion.div
                 className="text-center flex flex-col items-center justify-center py-10"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                {/* Icon Check 3D giả lập bằng gradient */}
                 <div className="relative w-32 h-32 flex items-center justify-center rounded-full bg-radial from-[#64c5f9] to-[#36a6f1] shadow-[inset_0_-8px_12px_rgba(0,0,0,0.15),0_15px_25px_rgba(54,166,241,0.4)] mb-8">
                   <svg
                     className="w-14 h-14 text-white drop-shadow-[0_4px_6px_rgba(0,0,0,0.2)]"
@@ -286,7 +284,6 @@ export default function CTA() {
                   information and will get back to you shortly.
                 </p>
 
-                {/* Nút quay lại để test hoặc gửi form khác nếu cần */}
                 <button
                   onClick={() => setIsSubmitted(false)}
                   className="text-sm font-medium text-gray-400 hover:text-blue-500 transition-colors underline cursor-pointer"
