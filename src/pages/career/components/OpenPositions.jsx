@@ -7,34 +7,180 @@ import { Search, ChevronDown, X, Upload, CheckCircle2 } from "lucide-react";
 
 const jobs = [
   {
-    title: "Frontend Developer",
+    title: "Frontend Developer (ReactJS)",
     type: "Full-time",
-    location: "TPHCM",
+    location: "Ho Chi Minh City",
+    description:
+      "We are looking for a Frontend Developer to build scalable, high-performance web applications using ReactJS, TypeScript, and modern frontend technologies. You will collaborate closely with designers, backend engineers, and product teams to deliver exceptional user experiences.",
+
+    responsibilities: [
+      "Develop, and enhance responsive web applications using ReactJS and TypeScript",
+      "Translate UI/UX designs into reusable and maintainable frontend components",
+      "Integrate RESTful APIs and third-party services",
+      "Optimize application performance, accessibility, and responsiveness",
+      "Participate in code reviews and contribute to frontend architecture decisions",
+      "Collaborate with cross-functional teams in Agile/Scrum environments",
+      "Write clean, testable, and well-documented code",
+    ],
+
+    requirements: [
+      "2+ years of professional experience with ReactJS",
+      "Strong proficiency in JavaScript (ES6+) and TypeScript",
+      "Experience with state management libraries such as Redux or Zustand",
+      "Solid understanding of HTML5, CSS3, Tailwind CSS, and responsive design",
+      "Experience working with REST APIs and Git workflows",
+      "Familiarity with frontend testing tools is a plus",
+      "Good communication and problem-solving skills",
+    ],
+    benefits: [
+      "Competitive salary & annual review",
+      "13th-month bonus",
+      "Hybrid working environment",
+      "Training & certification support",
+      "Generous leave policy",
+    ],
   },
+
   {
-    title: "Backend Engineer (Java/Spring)",
+    title: "Backend Engineer (Java/Spring Boot)",
     type: "Full-time",
-    location: "TPHCM",
+    location: "Ho Chi Minh City",
+    description:
+      "We are seeking an experienced Backend Engineer to design, develop, and maintain scalable backend systems and APIs using Java and Spring Boot. You will work closely with frontend developers, QA engineers, and DevOps teams to deliver reliable software solutions.",
+
+    responsibilities: [
+      "Design, develop, and maintain scalable backend services using Java and Spring Boot",
+      "Build and maintain RESTful APIs and microservices",
+      "Design database schemas and optimize SQL queries",
+      "Implement authentication, authorization, and security best practices",
+      "Collaborate with frontend, QA, and DevOps teams throughout the development lifecycle",
+      "Participate in code reviews and technical design discussions",
+      "Monitor and improve application performance, reliability, and scalability",
+    ],
+
+    requirements: [
+      "3+ years of experience in Java backend development",
+      "Strong knowledge of Spring Boot, Spring Security, and JPA/Hibernate",
+      "Experience with MySQL, PostgreSQL, or other relational databases",
+      "Understanding of RESTful API design principles",
+      "Experience with Docker, CI/CD pipelines, and Git",
+      "Knowledge of cloud platforms (AWS, Azure, or GCP) is a plus",
+      "Strong analytical and troubleshooting skills",
+    ],
+    benefits: [
+      "Competitive salary & annual review",
+      "Performance bonus",
+      "Healthcare package",
+      "Professional development support",
+    ],
   },
+
   {
     title: "QA Automation Engineer",
     type: "Remote",
-    location: "Hà Nội",
+    location: "Ha Noi",
+    description:
+      "We are looking for a QA Automation Engineer to ensure product quality through automated testing strategies for web and mobile applications. You will work closely with development teams to improve testing coverage and release confidence.",
+
+    responsibilities: [
+      "Design, develop, and maintain automated test frameworks and test scripts",
+      "Execute functional, regression, integration, and API testing",
+      "Identify, document, and track software defects",
+      "Collaborate with developers to reproduce and resolve issues",
+      "Participate in requirement reviews and test planning activities",
+      "Contribute to CI/CD pipelines by integrating automated tests",
+      "Prepare test reports and quality metrics",
+    ],
+
+    requirements: [
+      "2+ years of experience in Software Testing or QA Automation",
+      "Hands-on experience with Selenium, Cypress, Playwright, or Appium",
+      "Knowledge of API testing tools such as Postman",
+      "Understanding of SDLC, STLC, and Agile methodologies",
+      "Basic programming skills in JavaScript, Java, or Python",
+      "Experience with Git and CI/CD environments",
+      "Strong attention to detail and communication skills",
+    ],
+    benefits: [
+      "Remote working opportunity",
+      "Flexible schedule",
+      "Healthcare package",
+      "Training support",
+    ],
   },
+
   {
     title: "AI Engineer",
     type: "Full-time",
-    location: "Hà Nội",
+    location: "Ha Noi",
+    description:
+      "We are seeking an AI Engineer to design, develop, and deploy machine learning and artificial intelligence solutions that solve real-world business challenges. You will work with data scientists and software engineers to bring AI models into production environments.",
+
+    responsibilities: [
+      "Develop, train, and evaluate machine learning models",
+      "Research and implement AI algorithms and deep learning techniques",
+      "Prepare and process datasets for model training and validation",
+      "Deploy AI/ML models into production environments",
+      "Monitor model performance and continuously improve accuracy",
+      "Collaborate with engineering teams to integrate AI solutions into products",
+      "Document experiments, model architectures, and technical findings",
+    ],
+
+    requirements: [
+      "3+ years of experience in AI, Machine Learning, or Data Science",
+      "Strong proficiency in Python",
+      "Experience with TensorFlow, PyTorch, Scikit-learn, or similar frameworks",
+      "Understanding of machine learning, deep learning, and NLP concepts",
+      "Experience with SQL and data processing pipelines",
+      "Familiarity with cloud-based ML services is a plus",
+      "Strong analytical and problem-solving skills",
+    ],
+    benefits: [
+      "AI research opportunities",
+      "Performance bonus",
+      "Learning budget",
+      "Flexible working hours",
+    ],
   },
+
   {
     title: "Senior Frontend Engineer",
-    type: "Part-time",
-    location: "Đà Nẵng",
+    type: "Full-time",
+    location: "Da Nang",
+    description:
+      "We are looking for a Senior Frontend Engineer to lead frontend architecture, drive technical excellence, and mentor developers while building scalable, high-performance web applications.",
+
+    responsibilities: [
+      "Lead the design and development of complex frontend applications",
+      "Define frontend architecture and coding standards",
+      "Mentor junior and mid-level developers through code reviews and technical guidance",
+      "Collaborate with product managers, designers, and backend engineers",
+      "Drive performance optimization and frontend best practices",
+      "Evaluate and adopt new technologies when appropriate",
+      "Ensure code quality through testing, documentation, and CI/CD practices",
+    ],
+
+    requirements: [
+      "5+ years of professional frontend development experience",
+      "Expert knowledge of ReactJS, TypeScript, JavaScript, HTML5, and CSS3",
+      "Strong understanding of frontend architecture and design patterns",
+      "Experience with Next.js, SSR, and performance optimization",
+      "Experience leading technical initiatives and mentoring developers",
+      "Familiarity with testing frameworks and CI/CD pipelines",
+      "Excellent communication, leadership, and problem-solving skills",
+    ],
+    benefits: [
+      "Leadership opportunities",
+      "Performance bonus",
+      "Healthcare package",
+      "Certification support",
+    ],
   },
 ];
 
 export default function OpenPositions() {
   const [selectedJob, setSelectedJob] = useState(null);
+  const [jobModalStep, setJobModalStep] = useState("details");
 
   const [search, setSearch] = useState("");
   const [location, setLocation] = useState("All");
@@ -223,6 +369,7 @@ export default function OpenPositions() {
 
   const closeModal = () => {
     setSelectedJob(null);
+    setJobModalStep("details");
 
     setErrors({});
 
@@ -233,6 +380,16 @@ export default function OpenPositions() {
       phone: "",
       resume: null,
     });
+  };
+
+  const openJobDetails = (job) => {
+    setSelectedJob(job);
+    setJobModalStep("details");
+  };
+
+  const openApplyForm = () => {
+    setJobModalStep("apply");
+    setErrors({});
   };
 
   useEffect(() => {
@@ -382,10 +539,10 @@ export default function OpenPositions() {
 
               {/* BUTTON */}
               <Button
-                onClick={() => setSelectedJob(job)}
+                onClick={() => openJobDetails(job)}
                 className="bg-blue-500 text-white hover:bg-blue-600 px-6 py-2.5 rounded-lg text-sm"
               >
-                Apply now
+                View JD
               </Button>
             </motion.div>
           ))}
@@ -411,7 +568,9 @@ export default function OpenPositions() {
               {/* BOX */}
               <motion.div
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden"
+                className={`bg-white w-full rounded-2xl shadow-2xl flex flex-col ${
+                  jobModalStep === "details" ? "max-w-7xl" : "max-w-2xl"
+                } max-h-[95vh]`}
                 initial={{
                   opacity: 0,
                   y: -80,
@@ -432,10 +591,17 @@ export default function OpenPositions() {
                 }}
               >
                 {/* HEADER */}
-                <div className="flex items-center justify-between px-6 py-4 border-b">
-                  <h3 className="text-2xl font-semibold">
-                    Apply for {selectedJob.title}
-                  </h3>
+                <div className="flex items-center justify-between px-6 py-4 border-b shrink-0">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-1">
+                      {jobModalStep === "details"
+                        ? "Job Description"
+                        : "Apply now"}
+                    </p>
+                    <h3 className="text-2xl font-semibold">
+                      {selectedJob.title}
+                    </h3>
+                  </div>
 
                   <button
                     onClick={closeModal}
@@ -445,141 +611,218 @@ export default function OpenPositions() {
                   </button>
                 </div>
 
-                {/* FORM */}
-                <div className="p-6">
-                  <form className="space-y-4" onSubmit={handleSubmit}>
-                    {/* NAME */}
-                    <div className="grid md:grid-cols-2 gap-4">
+                {/* CONTENT */}
+                <div className="p-6 overflow-y-auto max-h-[calc(90vh-90px)]">
+                  {jobModalStep === "details" ? (
+                    <div className="space-y-6">
+                      <div className="flex gap-2 flex-wrap mb-1">
+                        <span className="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-lg font-medium">
+                          {selectedJob.type}
+                        </span>
+
+                        <span className="bg-indigo-100 text-indigo-700 text-xs px-3 py-1 rounded-lg font-medium">
+                          {selectedJob.location}
+                        </span>
+                      </div>
+
+                      <p className="text-gray-700 leading-relaxed">
+                        {selectedJob.description}
+                      </p>
+
+                      <div className="grid md:grid-cols-2 gap-5">
+                        <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                          <h4 className="font-semibold text-gray-900 mb-3">
+                            Responsibilities
+                          </h4>
+
+                          <ul className="space-y-2 text-sm text-gray-700 list-disc pl-5">
+                            {selectedJob.responsibilities.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="rounded-xl border border-gray-200 bg-gray-50 p-4">
+                          <h4 className="font-semibold text-gray-900 mb-3">
+                            Requirements
+                          </h4>
+
+                          <ul className="space-y-2 text-sm text-gray-700 list-disc pl-5">
+                            {selectedJob.requirements.map((item) => (
+                              <li key={item}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <div className="rounded-xl border border-blue-100 bg-blue-50 p-5">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="font-semibold text-gray-900 mr-2">
+                            Benefits:
+                          </span>
+
+                          {selectedJob.benefits?.map((item) => (
+                            <span
+                              key={item}
+                              className="px-3 py-1 rounded-lg text-xs font-medium bg-white text-blue-700 border border-blue-200"
+                            >
+                              {item}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-3 sm:justify-end">
+                        <Button
+                          onClick={closeModal}
+                          className="bg-gray-100 text-gray-700 hover:bg-gray-200 px-6 py-2.5 rounded-lg text-sm"
+                        >
+                          Close
+                        </Button>
+
+                        <Button
+                          onClick={openApplyForm}
+                          className="bg-blue-500 text-white hover:bg-blue-600 px-6 py-2.5 rounded-lg text-sm"
+                        >
+                          Apply now
+                        </Button>
+                      </div>
+                    </div>
+                  ) : (
+                    <form className="space-y-4" onSubmit={handleSubmit}>
+                      {/* NAME */}
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <div>
+                          <label className="text-sm font-medium text-gray-700">
+                            First name <span className="text-red-500">*</span>
+                          </label>
+
+                          <input
+                            type="text"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleChange}
+                            placeholder="First name"
+                            className="w-full mt-1.5 border border-gray-300 rounded-lg px-4 h-11 outline-none focus:border-blue-500"
+                          />
+
+                          {errors.firstName && (
+                            <p className="text-red-500 text-xs mt-1">
+                              {errors.firstName}
+                            </p>
+                          )}
+                        </div>
+
+                        <div>
+                          <label className="text-sm font-medium text-gray-700">
+                            Last name <span className="text-red-500">*</span>
+                          </label>
+
+                          <input
+                            type="text"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleChange}
+                            placeholder="Last name"
+                            className="w-full mt-1.5 border border-gray-300 rounded-lg px-4 h-11 outline-none focus:border-blue-500"
+                          />
+
+                          {errors.lastName && (
+                            <p className="text-red-500 text-xs mt-1">
+                              {errors.lastName}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* EMAIL */}
                       <div>
                         <label className="text-sm font-medium text-gray-700">
-                          First name <span className="text-red-500">*</span>
+                          Email <span className="text-red-500">*</span>
                         </label>
 
                         <input
-                          type="text"
-                          name="firstName"
-                          value={formData.firstName}
+                          type="email"
+                          name="email"
+                          value={formData.email}
                           onChange={handleChange}
-                          placeholder="First name"
+                          placeholder="Email"
                           className="w-full mt-1.5 border border-gray-300 rounded-lg px-4 h-11 outline-none focus:border-blue-500"
                         />
 
-                        {errors.firstName && (
+                        {errors.email && (
                           <p className="text-red-500 text-xs mt-1">
-                            {errors.firstName}
+                            {errors.email}
                           </p>
                         )}
                       </div>
 
+                      {/* PHONE */}
                       <div>
                         <label className="text-sm font-medium text-gray-700">
-                          Last name <span className="text-red-500">*</span>
+                          Phone <span className="text-red-500">*</span>
                         </label>
 
                         <input
                           type="text"
-                          name="lastName"
-                          value={formData.lastName}
+                          name="phone"
+                          value={formData.phone}
                           onChange={handleChange}
-                          placeholder="Last name"
+                          placeholder="Phone"
                           className="w-full mt-1.5 border border-gray-300 rounded-lg px-4 h-11 outline-none focus:border-blue-500"
                         />
 
-                        {errors.lastName && (
+                        {errors.phone && (
                           <p className="text-red-500 text-xs mt-1">
-                            {errors.lastName}
+                            {errors.phone}
                           </p>
                         )}
                       </div>
-                    </div>
 
-                    {/* EMAIL */}
-                    <div>
-                      <label className="text-sm font-medium text-gray-700">
-                        Email <span className="text-red-500">*</span>
-                      </label>
+                      {/* RESUME */}
+                      <div>
+                        <label className="text-sm font-medium text-gray-700">
+                          Resume <span className="text-red-500">*</span>
+                        </label>
 
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Email"
-                        className="w-full mt-1.5 border border-gray-300 rounded-lg px-4 h-11 outline-none focus:border-blue-500"
-                      />
+                        <label className="mt-2 border-2 border-dashed border-gray-300 rounded-xl h-32 flex flex-col items-center justify-center cursor-pointer hover:border-blue-400 transition">
+                          <Upload size={30} className="text-sky-400 mb-2" />
 
-                      {errors.email && (
-                        <p className="text-red-500 text-xs mt-1">
-                          {errors.email}
-                        </p>
-                      )}
-                    </div>
+                          <p className="text-sm text-gray-600">
+                            Upload a file or drag and drop here
+                          </p>
 
-                    {/* PHONE */}
-                    <div>
-                      <label className="text-sm font-medium text-gray-700">
-                        Phone <span className="text-red-500">*</span>
-                      </label>
+                          {formData.resume && (
+                            <p className="text-xs text-blue-600 mt-2 font-medium">
+                              {formData.resume.name}
+                            </p>
+                          )}
 
-                      <input
-                        type="text"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="Phone"
-                        className="w-full mt-1.5 border border-gray-300 rounded-lg px-4 h-11 outline-none focus:border-blue-500"
-                      />
+                          <input
+                            type="file"
+                            className="hidden"
+                            accept=".pdf,.doc,.docx"
+                            onChange={handleFileChange}
+                          />
+                        </label>
 
-                      {errors.phone && (
-                        <p className="text-red-500 text-xs mt-1">
-                          {errors.phone}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* RESUME */}
-                    <div>
-                      <label className="text-sm font-medium text-gray-700">
-                        Resume <span className="text-red-500">*</span>
-                      </label>
-
-                      <label className="mt-2 border-2 border-dashed border-gray-300 rounded-xl h-32 flex flex-col items-center justify-center cursor-pointer hover:border-blue-400 transition">
-                        <Upload size={30} className="text-sky-400 mb-2" />
-
-                        <p className="text-sm text-gray-600">
-                          Upload a file or drag and drop here
-                        </p>
-
-                        {formData.resume && (
-                          <p className="text-xs text-blue-600 mt-2 font-medium">
-                            {formData.resume.name}
+                        {errors.resume && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.resume}
                           </p>
                         )}
+                      </div>
 
-                        <input
-                          type="file"
-                          className="hidden"
-                          accept=".pdf,.doc,.docx"
-                          onChange={handleFileChange}
-                        />
-                      </label>
-
-                      {errors.resume && (
-                        <p className="text-red-500 text-xs mt-1">
-                          {errors.resume}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* BUTTON */}
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-blue-500 text-white hover:bg-blue-600 h-11 rounded-lg text-base disabled:opacity-60"
-                    >
-                      {isSubmitting ? "Submitting..." : "Apply"}
-                    </Button>
-                  </form>
+                      {/* BUTTON */}
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full bg-blue-500 text-white hover:bg-blue-600 h-11 rounded-lg text-base disabled:opacity-60"
+                      >
+                        {isSubmitting ? "Submitting..." : "Apply"}
+                      </Button>
+                    </form>
+                  )}
                 </div>
               </motion.div>
             </motion.div>

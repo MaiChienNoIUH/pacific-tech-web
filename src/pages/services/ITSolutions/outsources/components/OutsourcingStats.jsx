@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Container from "../../../../../components/ui/Container";
 
 const stats = [
-  { label: "Projects Delivered", value: "120+" },
+  { label: "Projects Delivered", value: "50+" },
   { label: "On-Time Delivery", value: "96%" },
   { label: "Client Satisfaction", value: "99%" },
   { label: "Global Teams", value: "15+" },

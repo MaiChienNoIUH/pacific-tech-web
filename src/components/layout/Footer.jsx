@@ -10,11 +10,12 @@ export default function Footer() {
           <div className="flex justify-between items-start">
             <div>
               <Link to="/" className="inline-block hover:opacity-90 transition">
-                <h2 className="font-bold mb-4 text-7xl">
+                <h2 className="font-bold mb-4 text-4xl!">
                   Pacific <span className="text-blue-400 text-4xl">Tech</span>
                 </h2>
               </Link>
               <p className="text-gray-400">Navigating the Future of Software</p>
+              <p className="text-gray-400"> Contact us: info@pacifictech.vn</p>
 
               {/* SOCIAL */}
               <div className="flex gap-4 mt-6">
