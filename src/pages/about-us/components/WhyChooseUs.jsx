@@ -10,6 +10,7 @@ const features = [
       "Build intelligent chatbot and voicebot systems that automate customer interactions and improve engagement.",
     icon: Bot,
     color: "from-blue-500 to-cyan-400",
+    link: "/services/ai-solutions/chatbots",
   },
   {
     title: "Voice Recognition Technology",
@@ -17,6 +18,7 @@ const features = [
       "Implement accurate speech recognition solutions for real-time voice commands and smart automation.",
     icon: Mic,
     color: "from-purple-500 to-pink-400",
+    link: "/services/ai-solutions/voice-recognition",
   },
   {
     title: "Web Application Development",
@@ -24,6 +26,7 @@ const features = [
       "Develop scalable and modern web applications tailored to startups and growing businesses.",
     icon: Globe,
     color: "from-emerald-500 to-green-400",
+    link: "/services/it-solutions/web-development",
   },
   {
     title: "Mobile App Development",
@@ -31,6 +34,7 @@ const features = [
       "Create high-performance mobile applications with seamless user experiences across platforms.",
     icon: Smartphone,
     color: "from-orange-500 to-yellow-400",
+    link: "/services/it-solutions/mobile-apps",
   },
   {
     title: "Software Testing & QA",
@@ -38,6 +42,7 @@ const features = [
       "Ensure software reliability and product quality through comprehensive testing and QA processes.",
     icon: ShieldCheck,
     color: "from-red-500 to-pink-400",
+    link: "/services/it-solutions/software-testing",
   },
   {
     title: "Remote Staffing Solutions",
@@ -45,6 +50,7 @@ const features = [
       "Provide dedicated remote engineers and tech teams for SMBs and startups worldwide.",
     icon: Users,
     color: "from-indigo-500 to-blue-400",
+    link: "/services/it-solutions/remote-staffing",
   },
 ];
 
@@ -67,12 +73,13 @@ export default function WhyChooseUs() {
             const Icon = item.icon;
 
             return (
-              <motion.div
+              <motion.a
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                href={item.link}
                 className="bg-white rounded-2xl p-8 border border-gray-100 shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300"
               >
                 <div
@@ -86,7 +93,13 @@ export default function WhyChooseUs() {
                 <p className="text-gray-500 leading-relaxed">
                   {item.description}
                 </p>
-              </motion.div>
+                <a
+                  href={item.link}
+                  className="text-blue-500 font-semibold mt-4 inline-block"
+                >
+                  Learn more →
+                </a>
+              </motion.a>
             );
           })}
         </div>

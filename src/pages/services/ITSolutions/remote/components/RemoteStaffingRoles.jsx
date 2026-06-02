@@ -7,11 +7,11 @@ const roles = [
   "UI/UX Designers",
   "DevOps Engineers",
   "AI Specialists",
+  "BA (Business Analysts)",
   "QA Engineers",
   "Cloud Engineers",
   "Product Managers",
   "Customer Support",
-  "Virtual Assistants",
   "Data Analysts",
   "Marketing Specialists",
 ];
@@ -23,7 +23,7 @@ export default function RemoteStaffingRoles() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#dbe4ee_1px,transparent_1px),linear-gradient(to_bottom,#dbe4ee_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
 
       <Container>
-        <div className="grid lg:grid-cols-[320px_1fr] gap-20 items-start">
+        <div className="grid lg:grid-cols-[360px_1fr] gap-20 items-start">
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 35 }}

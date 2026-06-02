@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Container from "../../../../../components/ui/Container";
+import victoraLogo from "../../../../../assets/logo_victora.png";
+import dhlLogo from "../../../../../assets/dhl-logo.png";
+import hisenseLogo from "../../../../../assets/hisense-logo.webp";
+import toshibaLogo from "../../../../../assets/toshiba-logo.jpg";
+import aeonLogo from "../../../../../assets/aeon-logo.png";
 
 import {
   MonitorCheck,
@@ -121,18 +126,32 @@ const services = {
     {
       icon: Database,
       title: "Healthcare Supply Chain",
+      desc: "Supporting healthcare logistics and supply chain platforms with comprehensive quality assurance, process validation, and operational reliability testing.",
+      clients: [{ name: "Victora", logo: victoraLogo }],
     },
     {
       icon: Truck,
-      title: "Logistic",
+      title: "Logistics",
+      desc: "Ensuring transportation, fleet management, and logistics systems deliver accurate tracking, seamless operations, and dependable performance.",
+      clients: [
+        { name: "DHL", logo: dhlLogo },
+        { name: "Hisense", logo: hisenseLogo },
+      ],
     },
     {
       icon: Landmark,
       title: "Banking",
+      desc: "Providing rigorous testing for banking and financial applications to ensure security, compliance, transaction accuracy, and system stability.",
+      clients: [],
     },
     {
       icon: ShoppingCart,
       title: "Retail / E-commerce",
+      desc: "Validating digital commerce platforms, customer journeys, order processing, and omnichannel retail experiences.",
+      clients: [
+        { name: "Toshiba", logo: toshibaLogo },
+        { name: "AEON", logo: aeonLogo },
+      ],
     },
   ],
 };
@@ -232,9 +251,40 @@ export default function STServices() {
                         {item.title}
                       </h3>
 
-                      <p className="mt-4 text-slate-600 leading-relaxed">
-                        {item.desc}
-                      </p>
+                      {item.desc && (
+                        <p className="mt-4 text-slate-600 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      )}
+
+                      {activeTab === "Industries" &&
+                        "clients" in item &&
+                        item.clients?.length > 0 && (
+                          <>
+                            <div className="mt-6 h-px w-full bg-linear-to-r from-cyan-200/70 to-transparent" />
+
+                            <div className="mt-6">
+                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                                Featured Clients
+                              </p>
+
+                              <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-5">
+                                {item.clients.map((client) => (
+                                  <div
+                                    key={client.name}
+                                    className="flex items-center justify-center"
+                                  >
+                                    <img
+                                      src={client.logo}
+                                      alt={client.name}
+                                      className="h-10 object-contain transition-all duration-300 hover:scale-105"
+                                    />
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </>
+                        )}
                     </div>
 
                     {/* decorative line */}
