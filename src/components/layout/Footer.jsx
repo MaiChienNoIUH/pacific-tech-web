@@ -1,7 +1,6 @@
 import Container from "../ui/Container";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import vn from './../../../../DATN/movie-ticket-booking-fe-web-admin/src/locales/vn/index';
 
 export default function Footer() {
   return (
