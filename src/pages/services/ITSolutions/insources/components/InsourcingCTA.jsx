@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import Container from "../../../../../components/ui/Container";
 import Button from "../../../../../components/ui/Button";
+import { useNavigate } from "react-router-dom";
 
 export default function InsourcingCTA() {
+  const navigate = useNavigate();
   return (
     <section className="py-28 bg-slate-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(135deg,#0B1744,#050A1F)]" />
@@ -26,7 +28,10 @@ export default function InsourcingCTA() {
           </p>
 
           <div className="mt-10 flex gap-5 justify-center">
-            <Button className="px-6 py-2 bg-blue-600 text-white rounded-xl cursor-alias hover:bg-blue-700 transition">
+            <Button
+              onClick={() => navigate("/contact")}
+              className="px-6 py-2 bg-blue-600 text-white rounded-xl cursor-pointer hover:bg-blue-700 transition"
+            >
               Talk to Us
             </Button>
           </div>

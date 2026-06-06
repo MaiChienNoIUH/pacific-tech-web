@@ -1,49 +1,12 @@
 import Container from "../../../components/ui/Container";
 import Button from "../../../components/ui/Button";
 import { motion } from "framer-motion";
-
-const blogs = [
-  {
-    id: 1,
-    title: "Top AI Trends Transforming Software Development in 2026",
-    date: "Jan 12, 2026",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200",
-    featured: true,
-  },
-  {
-    id: 2,
-    title:
-      "How AI Chatbots Are Redefining Customer Experience Across Digital Platforms",
-    date: "Jan 10, 2026",
-    image: "https://images.unsplash.com/photo-1677442135136-760c813028c0?w=400",
-  },
-  {
-    id: 3,
-    title:
-      "Why Voice Technology and AI Assistants Are Becoming the Next Big Shift",
-    date: "Jan 08, 2026",
-    image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=400",
-  },
-  {
-    id: 4,
-    title:
-      "Best Practices for Scaling Modern Web Applications to Millions of Users",
-    date: "Jan 05, 2026",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400",
-  },
-  {
-    id: 5,
-    title:
-      "The Future of Mobile Applications in the Age of Artificial Intelligence",
-    date: "Jan 02, 2026",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400",
-  },
-];
+import { Link } from "react-router-dom";
+import { blogHighlights } from "../../blog/blogData";
 
 export default function Blog() {
-  const featured = blogs.find((b) => b.featured);
-  const others = blogs.filter((b) => !b.featured).slice(0, 4);
+  const featured = blogHighlights.find((b) => b.featured);
+  const others = blogHighlights.filter((b) => !b.featured).slice(0, 4);
 
   return (
     <section className="py-24 bg-gray-50">
@@ -70,19 +33,21 @@ export default function Blog() {
   transition={{ duration: 0.6 }}
   viewport={{ once: true }}
 >
-            <div className="overflow-hidden rounded-2xl">
-              <img
-                src={featured.image}
-                alt={featured.title}
-                className="w-full h-80 object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
+            <Link to={`/blog/${featured.slug}`} className="block">
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src={featured.image}
+                  alt={featured.title}
+                  className="w-full h-80 object-cover transition duration-500 group-hover:scale-105"
+                />
+              </div>
 
-            <p className="text-sm text-gray-400 mt-4">{featured.date}</p>
+              <p className="text-sm text-gray-400 mt-4">{featured.date}</p>
 
-            <h3 className="text-2xl font-bold mt-2 group-hover:text-blue-500 transition">
-              {featured.title}
-            </h3>
+              <h3 className="text-2xl font-bold mt-2 group-hover:text-blue-500 transition">
+                {featured.title}
+              </h3>
+            </Link>
           </motion.div>
 
           {/* RIGHT - LIST */}
@@ -96,6 +61,7 @@ export default function Blog() {
     viewport={{ once: true }}
     className="flex gap-4 items-center group cursor-pointer"
   >
+      <Link to={`/blog/${item.slug}`} className="flex gap-4 items-center w-full">
                 {/* IMAGE */}
                 <div className="w-28 h-20 overflow-hidden rounded-lg shrink-0">
                   <img
@@ -113,6 +79,7 @@ export default function Blog() {
                     {item.title}
                   </h4>
                 </div>
+    </Link>
               </motion.div>
             ))}
           </div>
@@ -120,9 +87,11 @@ export default function Blog() {
 
         {/* CTA */}
         <div className="mt-16 text-center">
-          <Button className="bg-blue-500 text-white hover:bg-blue-600 px-8 py-3">
-            View all blog posts →
-          </Button>
+          <Link to="/blog">
+            <Button className="bg-blue-500 text-white hover:bg-blue-600 px-8 py-3">
+              View all blog posts →
+            </Button>
+          </Link>
         </div>
       </Container>
     </section>

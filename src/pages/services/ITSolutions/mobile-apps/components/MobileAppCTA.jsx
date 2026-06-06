@@ -20,7 +20,7 @@ export default function MobileAppCTA() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="" className="px-8 py-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:scale-105 active:scale-95">
+            <a href="/contact" className="px-8 py-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:scale-105 active:scale-95">
               Talk to Us
             </a>
           </div>
