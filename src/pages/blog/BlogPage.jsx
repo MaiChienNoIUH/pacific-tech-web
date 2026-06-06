@@ -52,7 +52,7 @@ export default function BlogPage() {
           </section>
 
           <section className="mb-10 grid gap-5 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto no-scrollbar">
               <div className="inline-flex min-w-max gap-3 rounded-2xl bg-white/70 p-2 ring-1 ring-slate-200/80">
                 {blogTabs.map((tab) => (
                   <button

@@ -3,8 +3,13 @@ import Container from "../ui/Container";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X, Bot, Laptop, FolderKanban } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  const location = useLocation();
+
+  const isForceWhiteHeader =
+    location.pathname === "/contact" || location.pathname.startsWith("/blog");
   const [scrolled, setScrolled] = useState(false);
   const [openService, setOpenService] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -24,9 +29,24 @@ export default function Navbar() {
     setOpenInternal(false);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => {
+      const next = !prev;
+
+      if (next === false) {
+        setOpenMobileServices(false);
+        setOpenAi(false);
+        setOpenIt(false);
+        setOpenInternal(false);
+      }
+
+      return next;
+    });
+  };
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 650);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -39,7 +59,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
+        isMobileMenuOpen || scrolled || isForceWhiteHeader
           ? "bg-white shadow-sm"
           : "bg-[#0b1a3a]/70 backdrop-blur-lg border-b border-white/10"
       }`}
@@ -49,7 +69,7 @@ export default function Navbar() {
           <a
             href="/"
             className={`text-2xl md:text-3xl font-bold tracking-wide transition-all duration-300 z-60 ${
-              scrolled || isMobileMenuOpen ? "text-black" : "text-white"
+              scrolled || isMobileMenuOpen || isForceWhiteHeader ? "text-black" : "text-white"
             } hover:scale-105`}
           >
             Pacific{" "}
@@ -60,7 +80,7 @@ export default function Navbar() {
 
           <nav
             className={`hidden md:flex gap-8 items-center text-base font-medium ${
-              scrolled ? "text-black" : "text-white"
+              scrolled || isForceWhiteHeader ? "text-black" : "text-white"
             }`}
           >
             <Link to="/about" className="hover:text-blue-400 transition">
@@ -86,7 +106,7 @@ export default function Navbar() {
               </Link>
 
               <div
-                className={`absolute left-1/2 -translate-x-1/2 mt-6 w-225 bg-white text-black rounded-2xl shadow-2xl p-10
+                className={`absolute left-1/2 -translate-x-1/2 mt-4 w-225 bg-white text-black rounded-2xl shadow-2xl p-10
                 transition-all duration-300 ${
                   openService
                     ? "opacity-100 translate-y-0 visible"
@@ -103,17 +123,26 @@ export default function Navbar() {
                     </a>
                     <ul className="space-y-2 text-gray-700">
                       <li>
-                        <a href="/services/ai-solutions/chatbots" className="hover:text-blue-500 transition">
+                        <a
+                          href="/services/ai-solutions/chatbots"
+                          className="hover:text-blue-500 transition"
+                        >
                           Chatbots
                         </a>
                       </li>
                       <li>
-                        <a href="/services/ai-solutions/voicebots" className="hover:text-blue-500 transition">
+                        <a
+                          href="/services/ai-solutions/voicebots"
+                          className="hover:text-blue-500 transition"
+                        >
                           Voicebots
                         </a>
                       </li>
                       <li>
-                        <a href="/services/ai-solutions/voice-recognition" className="hover:text-blue-500 transition">
+                        <a
+                          href="/services/ai-solutions/voice-recognition"
+                          className="hover:text-blue-500 transition"
+                        >
                           Voice recognition
                         </a>
                       </li>
@@ -129,32 +158,50 @@ export default function Navbar() {
                     </a>
                     <ul className="space-y-2 text-gray-700">
                       <li>
-                        <a href="/services/it-solutions/insourcing" className="hover:text-blue-500 transition">
+                        <a
+                          href="/services/it-solutions/insourcing"
+                          className="hover:text-blue-500 transition"
+                        >
                           Insourcing Services
                         </a>
                       </li>
                       <li>
-                        <a href="/services/it-solutions/outsourcing" className="hover:text-blue-500 transition">
+                        <a
+                          href="/services/it-solutions/outsourcing"
+                          className="hover:text-blue-500 transition"
+                        >
                           Outsourcing Services
                         </a>
                       </li>
                       <li>
-                        <a href="/services/it-solutions/remote-staffing" className="hover:text-blue-500 transition">
+                        <a
+                          href="/services/it-solutions/remote-staffing"
+                          className="hover:text-blue-500 transition"
+                        >
                           Remote Staffing For SMBs - Startups
                         </a>
                       </li>
                       <li>
-                        <a href="/services/it-solutions/software-testing" className="hover:text-blue-500 transition">
+                        <a
+                          href="/services/it-solutions/software-testing"
+                          className="hover:text-blue-500 transition"
+                        >
                           Software Testing
                         </a>
                       </li>
                       <li>
-                        <a href="/services/it-solutions/web-development" className="hover:text-blue-500 transition">
+                        <a
+                          href="/services/it-solutions/web-development"
+                          className="hover:text-blue-500 transition"
+                        >
                           Web Development
                         </a>
                       </li>
                       <li>
-                        <a href="/services/it-solutions/mobile-apps" className="hover:text-blue-500 transition">
+                        <a
+                          href="/services/it-solutions/mobile-apps"
+                          className="hover:text-blue-500 transition"
+                        >
                           Mobile Apps
                         </a>
                       </li>
@@ -206,9 +253,9 @@ export default function Navbar() {
 
             <button
               className={`md:hidden z-60 transition-colors ${
-                scrolled || isMobileMenuOpen ? "text-black" : "text-white"
+                scrolled || isMobileMenuOpen || isForceWhiteHeader ? "text-black" : "text-white"
               }`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={toggleMobileMenu}
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -223,7 +270,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-0 left-0 w-full h-dvh bg-white z-50 flex flex-col p-4 pt-24 md:hidden overflow-y-scroll"
+            className="fixed top-15 left-0 w-full h-[calc(100dvh-60px)] bg-white z-40 flex flex-col p-4 pt-8 md:hidden overflow-y-scroll no-scrollbar"
             style={{ WebkitOverflowScrolling: "touch" }}
           >
             <nav className="flex flex-col gap-6 text-xl font-semibold text-black">
@@ -238,13 +285,26 @@ export default function Navbar() {
               <div className="border-b border-gray-100 pb-4">
                 {/* MAIN SERVICES */}
                 <div className="w-full flex items-center justify-between text-xl font-semibold text-black">
-                  <Link to="/services" onClick={closeMobileMenu} className="flex-1 pr-4">
+                  <Link
+                    to="/services"
+                    onClick={closeMobileMenu}
+                    className="flex-1 pr-4"
+                  >
                     Services
                   </Link>
 
                   <button
                     type="button"
-                    onClick={() => setOpenMobileServices(!openMobileServices)}
+                    onClick={() => {
+                      if (openMobileServices) {
+                        // đang mở → sắp đóng → reset con
+                        setOpenAi(false);
+                        setOpenIt(false);
+                        setOpenInternal(false);
+                      }
+
+                      setOpenMobileServices(!openMobileServices);
+                    }}
                     className="shrink-0 p-1 -mr-1"
                     aria-label="Toggle Services submenu"
                   >
@@ -304,9 +364,24 @@ export default function Navbar() {
                               className="overflow-hidden"
                             >
                               <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
-                                <Link to="/services/ai-solutions/chatbots" onClick={closeMobileMenu}>Chatbots</Link>
-                                <Link to="/services/ai-solutions/voicebots" onClick={closeMobileMenu}>Voicebots</Link>
-                                <Link to="/services/ai-solutions/voice-recognition" onClick={closeMobileMenu}>Voice Recognition</Link>
+                                <Link
+                                  to="/services/ai-solutions/chatbots"
+                                  onClick={closeMobileMenu}
+                                >
+                                  Chatbots
+                                </Link>
+                                <Link
+                                  to="/services/ai-solutions/voicebots"
+                                  onClick={closeMobileMenu}
+                                >
+                                  Voicebots
+                                </Link>
+                                <Link
+                                  to="/services/ai-solutions/voice-recognition"
+                                  onClick={closeMobileMenu}
+                                >
+                                  Voice Recognition
+                                </Link>
                               </div>
                             </motion.div>
                           )}
@@ -321,7 +396,10 @@ export default function Navbar() {
                             onClick={closeMobileMenu}
                             className="flex items-center gap-3 flex-1 min-w-0"
                           >
-                            <Laptop className="text-blue-600 shrink-0" size={22} />
+                            <Laptop
+                              className="text-blue-600 shrink-0"
+                              size={22}
+                            />
                             <span className="font-semibold text-[17px] text-black">
                               IT Solutions
                             </span>
@@ -351,12 +429,42 @@ export default function Navbar() {
                               className="overflow-hidden"
                             >
                               <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
-                                <Link to="/services/it-solutions/insourcing" onClick={closeMobileMenu}>Insourcing Services</Link>
-                                <Link to="/services/it-solutions/outsourcing" onClick={closeMobileMenu}>Outsourcing Services</Link>
-                                <Link to="/services/it-solutions/remote-staffing" onClick={closeMobileMenu}>Remote Staffing For SMBs - Startups</Link>
-                                <Link to="/services/it-solutions/software-testing" onClick={closeMobileMenu}>Software Testing</Link>
-                                <Link to="/services/it-solutions/web-development" onClick={closeMobileMenu}>Web Development</Link>
-                                <Link to="/services/it-solutions/mobile-apps" onClick={closeMobileMenu}>Mobile Apps</Link>
+                                <Link
+                                  to="/services/it-solutions/insourcing"
+                                  onClick={closeMobileMenu}
+                                >
+                                  Insourcing Services
+                                </Link>
+                                <Link
+                                  to="/services/it-solutions/outsourcing"
+                                  onClick={closeMobileMenu}
+                                >
+                                  Outsourcing Services
+                                </Link>
+                                <Link
+                                  to="/services/it-solutions/remote-staffing"
+                                  onClick={closeMobileMenu}
+                                >
+                                  Remote Staffing For SMBs - Startups
+                                </Link>
+                                <Link
+                                  to="/services/it-solutions/software-testing"
+                                  onClick={closeMobileMenu}
+                                >
+                                  Software Testing
+                                </Link>
+                                <Link
+                                  to="/services/it-solutions/web-development"
+                                  onClick={closeMobileMenu}
+                                >
+                                  Web Development
+                                </Link>
+                                <Link
+                                  to="/services/it-solutions/mobile-apps"
+                                  onClick={closeMobileMenu}
+                                >
+                                  Mobile Apps
+                                </Link>
                               </div>
                             </motion.div>
                           )}
@@ -371,7 +479,10 @@ export default function Navbar() {
                             onClick={closeMobileMenu}
                             className="flex items-center gap-3 flex-1 min-w-0"
                           >
-                            <FolderKanban className="text-blue-600 shrink-0" size={22} />
+                            <FolderKanban
+                              className="text-blue-600 shrink-0"
+                              size={22}
+                            />
                             <span className="font-semibold text-[17px] text-black">
                               Internal Projects
                             </span>
@@ -401,8 +512,12 @@ export default function Navbar() {
                               className="overflow-hidden"
                             >
                               <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
-                                <Link to="#" onClick={closeMobileMenu}>Working Utilities</Link>
-                                <Link to="#" onClick={closeMobileMenu}>Games</Link>
+                                <Link to="#" onClick={closeMobileMenu}>
+                                  Working Utilities
+                                </Link>
+                                <Link to="#" onClick={closeMobileMenu}>
+                                  Games
+                                </Link>
                               </div>
                             </motion.div>
                           )}
