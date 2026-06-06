@@ -1,3 +1,4 @@
+import InternalProjectOverview from "./components/InternalProjectOverview";
 import InternalHero from "./components/InternalHero";
 import InternalOverview from "./components/InternalOverview";
 import InternalServicesList from "./components/InternalServicesList";
@@ -11,6 +12,7 @@ export default function InternalProjectsPage() {
     <main className="min-h-screen bg-white">
       <Navbar />
       <InternalHero />
+      <InternalProjectOverview />
       <InternalOverview />
       <InternalServicesList />
       <CTA />

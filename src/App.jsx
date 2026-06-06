@@ -2,7 +2,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import HomePage from "./pages/home/Homepage";
 import AboutPage from "./pages/about-us/AboutPage";
+import BlogPage from "./pages/blog/BlogPage";
+import BlogCategoryPage from "./pages/blog/BlogCategoryPage";
+import BlogDetailPage from "./pages/blog/BlogDetailPage";
 import Career from "./pages/career/Career";
+import ContactPage from "./pages/contact/ContactPage";
 import ServicesPage from "./pages/services/ServicesPage";
 import AISolutionsPage from "./pages/services/AISolutions/AISolutionsPage"
 import ITSolutionsPage from "./pages/services/ITSolutions/ITSolutionsPage"
@@ -27,7 +31,11 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/category/:categorySlug" element={<BlogCategoryPage />} />
+        <Route path="/blog/:slug" element={<BlogDetailPage />} />
         <Route path="/careers" element={<Career />} />
+        <Route path="/contact" element={<ContactPage />} />
 
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/ai-solutions" element={<AISolutionsPage />} />

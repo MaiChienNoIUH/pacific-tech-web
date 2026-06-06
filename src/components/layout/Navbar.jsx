@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Container from "../ui/Container";
-import Button from "../ui/Button";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Menu, X, Bot, Laptop, FolderKanban } from "lucide-react";
@@ -190,16 +189,19 @@ export default function Navbar() {
               Careers
             </Link>
 
-            <a href="#" className="hover:text-blue-400 transition">
+            <Link to="/blog" className="hover:text-blue-400 transition">
               Blog
-            </a>
+            </Link>
           </nav>
 
           <div className="flex items-center gap-4">
             <div className="hidden md:block">
-              <Button className="text-sm px-4 py-2 bg-blue-500 text-white hover:bg-blue-600">
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center text-sm px-4 py-2 rounded-lg font-medium transition cursor-pointer hover:scale-105 active:scale-95 bg-blue-500 text-white hover:bg-blue-600"
+              >
                 Contact Us
-              </Button>
+              </Link>
             </div>
 
             <button
@@ -419,16 +421,20 @@ export default function Navbar() {
                 Careers
               </Link>
               <Link
-                to="#"
+                to="/blog"
                 onClick={closeMobileMenu}
                 className="border-b border-gray-100 pb-4"
               >
                 Blog
               </Link>
 
-              <Button className="mt-4 w-full py-4 bg-blue-600 text-white rounded-xl">
+              <Link
+                to="/contact"
+                onClick={closeMobileMenu}
+                className="mt-4 inline-flex w-full items-center justify-center py-4 bg-blue-600 text-white rounded-xl font-medium transition hover:scale-[1.02] active:scale-[0.98]"
+              >
                 Contact Us
-              </Button>
+              </Link>
             </nav>
           </motion.div>
         )}

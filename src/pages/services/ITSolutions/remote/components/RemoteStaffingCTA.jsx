@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import Container from "../../../../../components/ui/Container";
+import { useNavigate } from "react-router-dom";
 
 export default function RemoteStaffingCTA() {
+  const navigate = useNavigate();
   return (
     <section className="py-28 bg-white relative overflow-hidden">
       {/* glow */}
@@ -14,9 +16,10 @@ export default function RemoteStaffingCTA() {
           viewport={{ once: true }}
           className="relative z-10 max-w-4xl mx-auto text-center"
         >
-          <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-cyan-50 border border-cyan-100 text-sm font-semibold text-cyan-700 shadow-sm">
+          <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-white border border-slate-200 text-sm font-semibold text-cyan-700 shadow-sm">
             Build Your Remote Team
           </span>
+
 
           <h2 className="mt-7 text-4xl! font-bold text-slate-900 leading-tight">
             Scale Faster with Flexible Global Talent
@@ -28,7 +31,10 @@ export default function RemoteStaffingCTA() {
           </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-5">
-            <button className="px-8 py-4 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-lg hover:shadow-cyan-300/40 hover:scale-[1.02] transition-all duration-300 cursor-pointer">
+            <button
+              onClick={() => navigate("/contact")}
+              className="px-8 py-4 rounded-full bg-linear-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-lg hover:shadow-cyan-300/40 hover:scale-[1.02] transition-all duration-300 cursor-pointer"
+            >
               Schedule Consultation
             </button>
           </div>
