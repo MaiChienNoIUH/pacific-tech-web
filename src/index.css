@@ -80,3 +80,13 @@ code {
 .animate-scroll {
   animation: scroll 17s linear infinite;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
