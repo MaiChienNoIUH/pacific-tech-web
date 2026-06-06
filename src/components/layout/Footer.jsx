@@ -88,23 +88,35 @@ export default function Footer() {
 
           <div>
             <Link
-              to="#"
+              to="/blog"
               className="block font-semibold mb-3 pb-1.5 text-blue-400 text-[20px] cursor-pointer hover:underline"
             >
               Blog
             </Link>
-            <a className="block text-gray-300 cursor-pointer hover:underline">
-              AI & Blockchain Trends
-            </a>
-            <a className="block text-gray-300 cursor-pointer hover:underline">
-              Thought Leadership Articles
-            </a>
-            <a className="block text-gray-300 cursor-pointer hover:underline">
-              Success Stories & Client Spotlights
-            </a>
-            <a className="block text-gray-300 cursor-pointer hover:underline">
-              Industry Case Studies{" "}
-            </a>
+            <Link
+              to="/blog/category/ai-solutions"
+              className="block text-gray-300 cursor-pointer hover:underline"
+            >
+              AI Solutions
+            </Link>
+            <Link
+              to="/blog/category/software-engineering"
+              className="block text-gray-300 cursor-pointer hover:underline"
+            >
+              Software Engineering
+            </Link>
+            <Link
+              to="/blog/category/insights-success-stories"
+              className="block text-gray-300 cursor-pointer hover:underline"
+            >
+              Insights & Success Stories
+            </Link>
+            <Link
+              to="/blog/category/mobile-qa"
+              className="block text-gray-300 cursor-pointer hover:underline"
+            >
+              Mobile & QA
+            </Link>
           </div>
 
           <div>
