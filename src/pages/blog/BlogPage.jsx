@@ -108,7 +108,7 @@ export default function BlogPage() {
                   {featuredBlog.date}
                 </p>
                 <Link to={`/blog/${featuredBlog.slug}`}>
-                  <h2 className="mt-2 text-5xl font-black leading-tight text-slate-900 transition group-hover:text-sky-600 md:text-4xl">
+                  <h2 className="mt-2 text-xl font-black leading-tight text-slate-900 transition group-hover:text-sky-600 md:text-4xl">
                     {featuredBlog.title}
                   </h2>
                 </Link>
@@ -145,7 +145,7 @@ export default function BlogPage() {
                         {blog.date}
                       </p>
                       <Link to={`/blog/${blog.slug}`}>
-                        <h3 className="text-3xl font-bold leading-snug text-slate-900 transition group-hover:text-sky-600 md:text-[1.07rem]">
+                        <h3 className="text-xl font-bold leading-snug text-slate-900 transition group-hover:text-sky-600 md:text-[1.07rem]">
                           {blog.title}
                         </h3>
                       </Link>
