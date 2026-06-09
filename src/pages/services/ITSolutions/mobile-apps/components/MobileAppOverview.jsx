@@ -10,7 +10,7 @@ export default function MobileAppOverview() {
       <div className="absolute top-0 right-0 w-140 h-140 bg-cyan-100/40 blur-[140px] rounded-full" />
 
       {/* grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
+      <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
 
       <Container>
         <div className="grid lg:grid-cols-[1fr_560px] gap-20 items-center relative z-10">

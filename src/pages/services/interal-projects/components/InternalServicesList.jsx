@@ -26,10 +26,10 @@ export default function InternalServicesList() {
       <Container>
         {/* Section Header */}
         <div className="text-left max-w-3xl mb-12">
-          <span className="text-sm font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-4 py-1.5 mb-4 rounded-full inline-block border border-blue-100">
+          <span className="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-100 px-4 py-1.5 mb-2 rounded-full inline-block">
             PRODUCT PIPELINE
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0b1a3a] mt-5 tracking-tight leading-tight">
+          <h2 className="text-3xl! md:text-4xl! font-bold text-[#0b1a3a] mt-5 tracking-tight leading-tight">
             Our Dedicated Internal Creations <br />
             For Operations & Entertainment
           </h2>
@@ -60,7 +60,7 @@ export default function InternalServicesList() {
                     {item.desc}
                   </p>
 
-                  <a
+                  {/* <a
                     href={item.path}
                     className="inline-flex items-center gap-2 text-blue-500 font-medium transition-all duration-300 group-hover:gap-4 group-hover:text-blue-600"
                   >
@@ -77,7 +77,7 @@ export default function InternalServicesList() {
                       size={18}
                       className="transition-transform duration-300 group-hover:scale-105"
                     />
-                  </a>
+                  </a> */}
                 </div>
 
                 {/* IMAGE COMPONENT */}

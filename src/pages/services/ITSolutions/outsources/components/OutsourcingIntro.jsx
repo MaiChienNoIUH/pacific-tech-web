@@ -8,7 +8,7 @@ export default function OutsourcingIntro() {
     <section className="py-24 bg-white border-b border-slate-200 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-130 h-130 bg-cyan-100/40 blur-[140px]" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] opacity-[0.18]" />
+      <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] opacity-[0.18]" />
 
       <Container>
         <div className="grid lg:grid-cols-[1fr_560px] gap-20 items-center relative z-10">

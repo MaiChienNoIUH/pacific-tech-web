@@ -45,7 +45,7 @@ const bullets = [
 export default function MobileAppWhyUs() {
   return (
     <section className="py-24 bg-[#f4f7fa] relative overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#dbe4ee_1px,transparent_1px),linear-gradient(to_bottom,#dbe4ee_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
+      <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#dbe4ee_1px,transparent_1px),linear-gradient(to_bottom,#dbe4ee_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
 
       <Container>
         <div className="relative z-10 grid lg:grid-cols-[420px_1fr] gap-16 items-start">

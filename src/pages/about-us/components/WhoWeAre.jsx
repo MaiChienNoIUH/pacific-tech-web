@@ -26,11 +26,11 @@ export default function WhoWeAre() {
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <p className="uppercase text-blue-500 font-bold tracking-widest mb-4">
+            <p className="uppercase text-blue-500 font-bold rounded-full tracking-widest inline-block text-xs bg-blue-50 px-4 py-1.5 mb-2">
               Who We Are
             </p>
 
-            <h2 className="text-5xl font-bold mb-6 leading-tight">
+            <h2 className="text-4xl font-bold mb-6 leading-tight">
               A technology partner focused on innovation and growth
             </h2>
 

@@ -24,7 +24,7 @@ export default function VoiceRecognitionFeatures() {
   return (
     <section className="py-20 bg-[#f4f7fa] overflow-hidden relative">
       {/* subtle background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#dbe4ee_1px,transparent_1px),linear-gradient(to_bottom,#dbe4ee_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
+      <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#dbe4ee_1px,transparent_1px),linear-gradient(to_bottom,#dbe4ee_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
 
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-18 lg:gap-24 items-start">

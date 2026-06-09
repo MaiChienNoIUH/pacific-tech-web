@@ -43,7 +43,7 @@ export default function ChatbotSteps() {
     >
       <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-md" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[4rem_4rem] opacity-[0.03]" />
+      <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[4rem_4rem] opacity-[0.03]" />
 
       <Container className="relative z-10">
         {/* Header */}

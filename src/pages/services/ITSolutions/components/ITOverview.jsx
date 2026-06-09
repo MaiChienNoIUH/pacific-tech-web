@@ -53,7 +53,7 @@ export default function ITOverview() {
           <span className="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-4 py-1.5 mb-2 rounded-full inline-block">
             BENEFITS
           </span>
-          <h2 className="text-4xl font-bold text-slate-900 mt-4 tracking-tight">
+          <h2 className="text-4xl! font-bold text-slate-900 mt-4 tracking-tight">
             Why IT Solutions
           </h2>
         </div>

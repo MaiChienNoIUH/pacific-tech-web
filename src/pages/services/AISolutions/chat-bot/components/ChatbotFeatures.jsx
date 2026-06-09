@@ -1,5 +1,11 @@
 import Container from "../../../../../components/ui/Container";
-import { MessageSquare, Globe2, Cpu, ArrowLeftRight, UserCheck } from "lucide-react";
+import {
+  MessageSquare,
+  Globe2,
+  Cpu,
+  ArrowLeftRight,
+  UserCheck,
+} from "lucide-react";
 
 const features = [
   {
@@ -36,11 +42,10 @@ const features = [
 
 export default function ChatbotFeatures() {
   return (
-    <section className="py-24 bg-white border-b border-slate-100">
+    <section className="py-16 bg-white border-b border-slate-100">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-12 lg:gap-16 items-start">
-          
-          <div className="text-left sticky top-24 p-8 rounded-4xl bg-linear-to-br from-[#d7e5ff]/95 via-[#d8dfff]/92 to-[#ecdfff]/92 border border-[#b7c4ff]/55 shadow-[0_30px_90px_rgba(79,70,229,0.18)] backdrop-blur-md">
+          <div className="text-left lg:sticky lg:top-24 p-8 rounded-4xl bg-linear-to-br from-[#d7e5ff]/95 via-[#d8dfff]/92 to-[#ecdfff]/92 border border-[#b7c4ff]/55 shadow-[0_30px_90px_rgba(79,70,229,0.18)] backdrop-blur-md">
             <span className="text-sm font-medium tracking-widest text-indigo-600 bg-indigo-100/60 px-4 py-1.5 mb-4 rounded-full inline-block border border-indigo-200/40 shadow-2xs">
               Capabilities
             </span>
@@ -48,15 +53,17 @@ export default function ChatbotFeatures() {
               What Our Chatbot Can Do
             </h2>
             <p className="text-sm text-slate-600 mt-4 leading-relaxed">
-              Our chatbots are more than scripted responders. They use advanced NLP and domain-trained AI to understand user intent, provide accurate answers, and trigger backend processes.
+              Our chatbots are more than scripted responders. They use advanced
+              NLP and domain-trained AI to understand user intent, provide
+              accurate answers, and trigger backend processes.
             </p>
           </div>
 
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-  {features.map((item, i) => (
-    <div
-      key={i}
-      className="
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {features.map((item, i) => (
+              <div
+                key={i}
+                className="
         p-8 rounded-3xl
         border border-[#d7def8]/70
         bg-linear-to-br from-[#ffffff]/95 via-[#f3f6ff]/95 to-[#eef0ff]/95
@@ -66,11 +73,11 @@ export default function ChatbotFeatures() {
         hover:shadow-[0_25px_60px_rgba(79,70,229,0.12)]
         hover:-translate-y-1
         backdrop-blur-md
-        group cursor-pointer
+        group
       "
-    >
-      <div
-        className={`
+              >
+                <div
+                  className={`
           w-12 h-12 rounded-2xl border
           flex items-center justify-center
           mb-6
@@ -78,21 +85,20 @@ export default function ChatbotFeatures() {
           group-hover:scale-110
           ${item.color}
         `}
-      >
-        <item.icon size={22} />
-      </div>
+                >
+                  <item.icon size={22} />
+                </div>
 
-      <h3 className="font-bold text-slate-900 text-lg mb-2 transition-colors duration-300 group-hover:text-blue-600">
-        {item.title}
-      </h3>
+                <h3 className="font-bold text-slate-900 text-lg mb-2 transition-colors duration-300 group-hover:text-blue-600">
+                  {item.title}
+                </h3>
 
-      <p className="text-sm text-slate-500 leading-relaxed">
-        {item.desc}
-      </p>
-    </div>
-  ))}
-</div>
-
+                <p className="text-sm text-slate-500 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </Container>
     </section>

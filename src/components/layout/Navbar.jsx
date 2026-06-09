@@ -18,7 +18,6 @@ export default function Navbar() {
 
   const [openAi, setOpenAi] = useState(false);
   const [openIt, setOpenIt] = useState(false);
-  const [openInternal, setOpenInternal] = useState(false);
   const [activeService, setActiveService] = useState("ai");
 
   const closeMobileMenu = () => {
@@ -26,7 +25,6 @@ export default function Navbar() {
     setOpenMobileServices(false);
     setOpenAi(false);
     setOpenIt(false);
-    setOpenInternal(false);
   };
 
   const toggleMobileMenu = () => {
@@ -37,7 +35,6 @@ export default function Navbar() {
         setOpenMobileServices(false);
         setOpenAi(false);
         setOpenIt(false);
-        setOpenInternal(false);
       }
 
       return next;
@@ -215,18 +212,6 @@ export default function Navbar() {
                     >
                       Internal Projects
                     </a>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>
-                        <a href="#" className="hover:text-blue-500 transition">
-                          Working Utilities
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" className="hover:text-blue-500 transition">
-                          Games
-                        </a>
-                      </li>
-                    </ul>
                   </div>
                 </div>
               </div>
@@ -300,7 +285,6 @@ export default function Navbar() {
                         // đang mở → sắp đóng → reset con
                         setOpenAi(false);
                         setOpenIt(false);
-                        setOpenInternal(false);
                       }
 
                       setOpenMobileServices(!openMobileServices);
@@ -487,41 +471,7 @@ export default function Navbar() {
                               Internal Projects
                             </span>
                           </Link>
-
-                          <button
-                            type="button"
-                            onClick={() => setOpenInternal(!openInternal)}
-                            className="shrink-0 p-1 -mr-1"
-                            aria-label="Toggle Internal Projects submenu"
-                          >
-                            <ChevronDown
-                              size={18}
-                              className={`transition-transform duration-300 ${
-                                openInternal ? "rotate-180" : ""
-                              }`}
-                            />
-                          </button>
                         </div>
-
-                        <AnimatePresence>
-                          {openInternal && (
-                            <motion.div
-                              initial={{ opacity: 0, height: 0 }}
-                              animate={{ opacity: 1, height: "auto" }}
-                              exit={{ opacity: 0, height: 0 }}
-                              className="overflow-hidden"
-                            >
-                              <div className="flex flex-col gap-3 px-5 pb-5 text-[15px] text-gray-600">
-                                <Link to="#" onClick={closeMobileMenu}>
-                                  Working Utilities
-                                </Link>
-                                <Link to="#" onClick={closeMobileMenu}>
-                                  Games
-                                </Link>
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
                       </div>
                     </motion.div>
                   )}

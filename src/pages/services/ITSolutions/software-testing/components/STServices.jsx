@@ -30,7 +30,7 @@ import {
   Truck,
 } from "lucide-react";
 
-const tabs = ["Testing Services", "Testing Types", "Platforms", "Industries"];
+const tabs = ["Industries","Testing Services", "Testing Types", "Platforms"];
 
 const services = {
   "Testing Services": [
@@ -165,7 +165,7 @@ export default function STServices() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-175 bg-cyan-100/40 blur-[140px] rounded-full" />
 
       {/* grid bg */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#dbe4ee_1px,transparent_1px),linear-gradient(to_bottom,#dbe4ee_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.16]" />
+      <div className=" hidden absolute inset-0 bg-[linear-gradient(to_right,#dbe4ee_1px,transparent_1px),linear-gradient(to_bottom,#dbe4ee_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.16]" />
 
       <Container>
         <div className="relative z-10">

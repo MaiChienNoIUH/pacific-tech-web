@@ -41,7 +41,7 @@ export default function VoiceRecognitionSteps() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-175 bg-cyan-400/10 blur-[190px] rounded-full" />
 
       {/* subtle grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-40" />
+      <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-40" />
 
       <Container>
         {/* Header */}
