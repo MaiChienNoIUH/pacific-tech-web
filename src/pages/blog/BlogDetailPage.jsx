@@ -71,8 +71,8 @@ export default function BlogDetailPage() {
 
   const tocItems = useMemo(
     () =>
-      detailSections.map((section) => ({
-        id: slugify(section.heading),
+      detailSections.map((section, index) => ({
+        id: `${slugify(section.heading)}-${index}`,
         label: section.heading,
       })),
     [detailSections],
@@ -86,15 +86,18 @@ export default function BlogDetailPage() {
       (entries) => {
         const visibleEntries = entries
           .filter((entry) => entry.isIntersecting)
-          .sort((first, second) => first.boundingClientRect.top - second.boundingClientRect.top);
+          .sort(
+            (first, second) =>
+              first.boundingClientRect.top - second.boundingClientRect.top,
+          );
 
         if (visibleEntries[0]) {
           setActiveChapter(visibleEntries[0].target.id);
         }
       },
       {
-        rootMargin: "-28% 0px -58% 0px",
-        threshold: 0.1,
+        rootMargin: "-15% 0px -70% 0px",
+        threshold: 0.2,
       },
     );
 
@@ -106,268 +109,273 @@ export default function BlogDetailPage() {
     return () => observer.disconnect();
   }, [tocItems]);
 
-return (
-  <div className="min-h-screen bg-[#f4f6fa] text-slate-900">
-    <Navbar />
+  return (
+    <div className="min-h-screen bg-[#f4f6fa] text-slate-900">
+      <Navbar />
 
-    <main className="pt-28 pb-20">
-      <Container>
-        <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-700"
-          >
-            <ArrowLeft size={16} />
-            Back to blog
-          </Link>
+      <main className="pt-28 pb-20">
+        <Container>
+          <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-700"
+            >
+              <ArrowLeft size={16} />
+              Back to blog
+            </Link>
 
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
-            {blog.category}
-          </p>
-        </div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+              {blog.category}
+            </p>
+          </div>
 
-        <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)] lg:items-start">
-          {/* TOC */}
-          <aside className="lg:sticky lg:top-24">
-            <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-              <h2 className="text-2xl font-black text-slate-900">
-                Article Content
-              </h2>
+          <div className="grid gap-8 lg:grid-cols-[280px_minmax(0,1fr)] lg:items-start">
+            {/* TOC */}
+            <aside className="lg:sticky lg:top-24">
+              <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
+                <h2 className="text-2xl font-black text-slate-900">
+                  Article Content
+                </h2>
 
-              <div className="mt-6 space-y-4">
-                {tocItems.map((item, index) => (
-                  <a
-                    key={item.id}
-                    href={`#${item.id}`}
-                    onClick={() => setActiveChapter(item.id)}
-                    aria-current={
-                      activeChapter === item.id ? "true" : undefined
-                    }
-                    className={`flex items-start gap-3 rounded-2xl px-3 py-2 text-sm leading-6 transition ${
-                      activeChapter === item.id
-                        ? "bg-sky-50 font-semibold text-sky-700 ring-1 ring-sky-100"
-                        : "text-slate-500 hover:bg-slate-50 hover:text-slate-900"
-                    }`}
-                  >
-                    <span
-                      className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[11px] transition ${
+                <div className="mt-6 space-y-4">
+                  {tocItems.map((item, index) => (
+                    <a
+                      key={item.id}
+                      href={`#${item.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+
+                        history.replaceState(null, "", `#${item.id}`);
+
+                        document.getElementById(item.id)?.scrollIntoView({
+                          behavior: "auto",
+                          block: "start",
+                        });
+                      }}
+                      className={`flex items-start gap-3 rounded-2xl px-3 py-2 text-sm leading-6 transition ${
                         activeChapter === item.id
-                          ? "border-sky-500 bg-sky-500 text-white"
-                          : "border-slate-300 text-transparent"
+                          ? "bg-sky-50 font-semibold text-sky-700 ring-1 ring-sky-100"
+                          : "text-slate-500 hover:bg-slate-50 hover:text-slate-900"
                       }`}
                     >
-                      <Check size={11} strokeWidth={4} />
-                    </span>
-
-                    <span>
-                      Chapter {index + 1}. {item.label}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </aside>
-
-          {/* Content */}
-          <div>
-            <article>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="overflow-hidden rounded-4xl bg-white shadow-sm ring-1 ring-slate-200"
-              >
-                <img
-                  src={blog.image}
-                  alt={blog.title}
-                  className="h-80 w-full object-cover md:h-95"
-                />
-
-                <div className="p-6 pt-3! md:p-10">
-                  <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-400">
-                    <span>{blog.date}</span>
-
-                    <span className="inline-flex items-center gap-2">
-                      <Clock3 size={14} />
-                      {blog.readTime}
-                    </span>
-
-                    <span className="inline-flex items-center gap-2">
-                      <UserRound size={14} />
-                      {blog.author}
-                    </span>
-                  </div>
-
-                  <h1 className="mt-5 max-w-4xl text-4xl font-black leading-tight text-slate-950 md:text-5xl">
-                    {blog.title}
-                  </h1>
-
-                  <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-600">
-                    {blog.intro}
-                  </p>
-
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    {blog.tags.slice(0, 4).map((tag) => (
                       <span
-                        key={tag}
-                        className="rounded-full bg-sky-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-sky-600 ring-1 ring-sky-100"
+                        className={`mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border text-[11px] transition ${
+                          activeChapter === item.id
+                            ? "border-sky-500 bg-sky-500 text-white"
+                            : "border-slate-300 text-transparent"
+                        }`}
                       >
-                        {tag}
+                        <Check size={11} strokeWidth={4} />
                       </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
 
-              <div className="mt-8 space-y-8 rounded-4xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:p-10">
-                {detailSections.map((section, index) => (
-                  <section
-                    key={section.heading}
-                    id={tocItems[index].id}
-                    className="scroll-mt-20"
-                  >
-                    <h2 className="text-3xl font-black text-slate-950">
-                      {section.heading}
-                    </h2>
-
-                    <div className="mt-4 space-y-4 text-base leading-8 text-slate-600">
-                      {section.paragraphs?.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
-                      ))}
-                    </div>
-
-                    {section.bullets ? (
-                      <ul className="mt-5 space-y-3">
-                        {section.bullets.map((bullet) => (
-                          <li
-                            key={bullet}
-                            className="flex gap-3 text-slate-600"
-                          >
-                            <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-sky-500" />
-                            <span className="leading-8">{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    ) : null}
-                  </section>
-                ))}
-
-                <section className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
-                  <h2 className="flex items-center gap-2 text-2xl font-black text-slate-950">
-                    <Tag size={20} />
-                    Key takeaways
-                  </h2>
-
-                  <div className="mt-4 grid gap-3 md:grid-cols-2">
-                    {blog.takeaways.map((item) => (
-                      <div
-                        key={item}
-                        className="rounded-2xl bg-white px-4 py-3 text-slate-600 ring-1 ring-slate-200"
-                      >
-                        {item}
-                      </div>
-                    ))}
-                  </div>
-                </section>
-
-                <section>
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
-                    Tags
-                  </p>
-
-                  <div className="mt-4 flex flex-wrap gap-3">
-                    {blog.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-full bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-600 ring-1 ring-sky-100"
-                      >
-                        {tag}
+                      <span>
+                        Chapter {index + 1}. {item.label}
                       </span>
-                    ))}
-                  </div>
-                </section>
-              </div>
-            </article>
-
-            {/* Category */}
-            <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
-                Category
-              </p>
-
-              <h3 className="mt-3 text-3xl font-black text-slate-950">
-                {blog.category}
-              </h3>
-
-              <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
-                This article belongs to our{" "}
-                {blog.category.toLowerCase()} series and explores practical
-                strategies, implementation insights, and industry perspectives
-                related to this topic.
-              </p>
-
-              <Link
-                to={`/blog/category/${blog.category
-                  .toLowerCase()
-                  .replace(/[^a-z0-9]+/g, "-")}`}
-                className="mt-6 inline-flex rounded-xl bg-sky-500 px-5 py-2 font-semibold text-white hover:scale-105 active:scale-95 transition hover:bg-sky-600"
-              >
-                View all articles
-              </Link>
-            </section>
-
-            {/* Related Articles */}
-            {relatedBlogs.length > 0 && (
-              <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
-                <div className="mb-6">
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
-                    Related Articles
-                  </p>
-
-                  <h3 className="mt-2 text-3xl font-black text-slate-950">
-                    Continue Reading
-                  </h3>
-                </div>
-
-                <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                  {relatedBlogs.map((related) => (
-                    <Link
-                      key={related.slug}
-                      to={`/blog/${related.slug}`}
-                      className="group overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg"
-                    >
-                      <div className="overflow-hidden">
-                        <img
-                          src={related.image}
-                          alt={related.title}
-                          className="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
-                        />
-                      </div>
-
-                      <div className="p-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-                          {related.date}
-                        </p>
-
-                        <h4 className="text-lg font-black leading-7 text-slate-900 transition group-hover:text-sky-600">
-                          {related.title}
-                        </h4>
-
-                        <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">
-                          {related.excerpt}
-                        </p>
-                      </div>
-                    </Link>
+                    </a>
                   ))}
                 </div>
-              </section>
-            )}
-          </div>
-        </div>
-      </Container>
-    </main>
+              </div>
+            </aside>
 
-    <Footer />
-  </div>
-);
+            {/* Content */}
+            <div>
+              <article>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="overflow-hidden rounded-4xl bg-white shadow-sm ring-1 ring-slate-200"
+                >
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="h-80 w-full object-cover md:h-95"
+                  />
+
+                  <div className="p-6 pt-3! md:p-10">
+                    <div className="flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-400">
+                      <span>{blog.date}</span>
+
+                      <span className="inline-flex items-center gap-2">
+                        <Clock3 size={14} />
+                        {blog.readTime}
+                      </span>
+
+                      <span className="inline-flex items-center gap-2">
+                        <UserRound size={14} />
+                        {blog.author}
+                      </span>
+                    </div>
+
+                    <h1 className="mt-5 max-w-4xl text-4xl font-black leading-tight text-slate-950 md:text-5xl">
+                      {blog.title}
+                    </h1>
+
+                    <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-600">
+                      {blog.intro}
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      {blog.tags.slice(0, 4).map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-sky-50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-sky-600 ring-1 ring-sky-100"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+
+                <div className="mt-8 space-y-8 rounded-4xl bg-white p-6 shadow-sm ring-1 ring-slate-200 md:p-10">
+                  {detailSections.map((section, index) => (
+                    <section
+                      key={section.heading}
+                      id={tocItems[index].id}
+                      className="scroll-mt-20"
+                    >
+                      <h2 className="text-3xl font-black text-slate-950">
+                        {section.heading}
+                      </h2>
+
+                      <div className="mt-4 space-y-4 text-base leading-8 text-slate-600">
+                        {section.paragraphs?.map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                      </div>
+
+                      {section.bullets ? (
+                        <ul className="mt-5 space-y-3">
+                          {section.bullets.map((bullet) => (
+                            <li
+                              key={bullet}
+                              className="flex gap-3 text-slate-600"
+                            >
+                              <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-sky-500" />
+                              <span className="leading-8">{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </section>
+                  ))}
+
+                  <section className="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-200">
+                    <h2 className="flex items-center gap-2 text-2xl font-black text-slate-950">
+                      <Tag size={20} />
+                      Key takeaways
+                    </h2>
+
+                    <div className="mt-4 grid gap-3 md:grid-cols-2">
+                      {blog.takeaways.map((item) => (
+                        <div
+                          key={item}
+                          className="rounded-2xl bg-white px-4 py-3 text-slate-600 ring-1 ring-slate-200"
+                        >
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                  </section>
+
+                  <section>
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+                      Tags
+                    </p>
+
+                    <div className="mt-4 flex flex-wrap gap-3">
+                      {blog.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-sky-50 px-4 py-2 text-sm font-semibold text-sky-600 ring-1 ring-sky-100"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </section>
+                </div>
+              </article>
+
+              {/* Category */}
+              <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+                  Category
+                </p>
+
+                <h3 className="mt-3 text-3xl font-black text-slate-950">
+                  {blog.category}
+                </h3>
+
+                <p className="mt-4 max-w-3xl text-base leading-8 text-slate-600">
+                  This article belongs to our {blog.category.toLowerCase()}{" "}
+                  series and explores practical strategies, implementation
+                  insights, and industry perspectives related to this topic.
+                </p>
+
+                <Link
+                  to={`/blog/category/${blog.category
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")}`}
+                  className="mt-6 inline-flex rounded-xl bg-sky-500 px-5 py-2 font-semibold text-white hover:scale-105 active:scale-95 transition hover:bg-sky-600"
+                >
+                  View all articles
+                </Link>
+              </section>
+
+              {/* Related Articles */}
+              {relatedBlogs.length > 0 && (
+                <section className="mt-8 rounded-3xl bg-white p-8 shadow-sm ring-1 ring-slate-200">
+                  <div className="mb-6">
+                    <p className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-400">
+                      Related Articles
+                    </p>
+
+                    <h3 className="mt-2 text-3xl font-black text-slate-950">
+                      Continue Reading
+                    </h3>
+                  </div>
+
+                  <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                    {relatedBlogs.map((related) => (
+                      <Link
+                        key={related.slug}
+                        to={`/blog/${related.slug}`}
+                        className="group overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg"
+                      >
+                        <div className="overflow-hidden">
+                          <img
+                            src={related.image}
+                            alt={related.title}
+                            className="h-52 w-full object-cover transition duration-500 group-hover:scale-105"
+                          />
+                        </div>
+
+                        <div className="p-5">
+                          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+                            {related.date}
+                          </p>
+
+                          <h4 className="text-lg font-black leading-7 text-slate-900 transition group-hover:text-sky-600">
+                            {related.title}
+                          </h4>
+
+                          <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">
+                            {related.excerpt}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
+            </div>
+          </div>
+        </Container>
+      </main>
+
+      <Footer />
+    </div>
+  );
 }

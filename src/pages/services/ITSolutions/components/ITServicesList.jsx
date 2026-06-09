@@ -23,10 +23,10 @@ export default function ITServicesList() {
     <section className="py-28 pt-18 bg-[#f5f9ff] overflow-hidden">
       <Container>
         <div className="text-left max-w-3xl mb-12">
-          <span className="text-sm font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-4 py-1.5 rounded-full inline-block border border-blue-100 mb-4">
+          <span className="text-sm font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-4 py-1.5 rounded-full inline-block border border-blue-100 mb-2">
             WHAT WE OFFER
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0b1a3a] mt-5 tracking-tight leading-tight">
+          <h2 className="text-4xl font-bold text-[#0b1a3a] mt-5 tracking-tight leading-tight">
             Insourcing Technical Specialists <br />& End-to-End Delivery
           </h2>
         </div>

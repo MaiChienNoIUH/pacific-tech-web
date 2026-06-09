@@ -9,7 +9,7 @@ const jobs = [
   {
     title: "Frontend Developer (ReactJS)",
     type: "Full-time",
-    location: "Ho Chi Minh City",
+    location: "Ho Chi Minh",
     description:
       "We are looking for a Frontend Developer to build scalable, high-performance web applications using ReactJS, TypeScript, and modern frontend technologies. You will collaborate closely with designers, backend engineers, and product teams to deliver exceptional user experiences.",
 
@@ -44,7 +44,7 @@ const jobs = [
   {
     title: "Backend Engineer (Java/Spring Boot)",
     type: "Full-time",
-    location: "Ho Chi Minh City",
+    location: "Ho Chi Minh",
     description:
       "We are seeking an experienced Backend Engineer to design, develop, and maintain scalable backend systems and APIs using Java and Spring Boot. You will work closely with frontend developers, QA engineers, and DevOps teams to deliver reliable software solutions.",
 
@@ -204,7 +204,11 @@ export default function OpenPositions() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const locations = ["TPHCM", "Đà Nẵng", "Hà Nội"];
+  const locations = [
+  "Ho Chi Minh",
+  "Ha Noi",
+  "Da Nang",
+];
 
   useEffect(() => {
     if (!toast.show) return;
@@ -381,6 +385,18 @@ export default function OpenPositions() {
       resume: null,
     });
   };
+
+  useEffect(() => {
+    if (selectedJob) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedJob]);
 
   const openJobDetails = (job) => {
     setSelectedJob(job);
@@ -568,9 +584,9 @@ export default function OpenPositions() {
               {/* BOX */}
               <motion.div
                 onClick={(e) => e.stopPropagation()}
-                className={`bg-white w-full rounded-2xl shadow-2xl flex flex-col ${
-                  jobModalStep === "details" ? "max-w-7xl" : "max-w-2xl"
-                } max-h-[95vh]`}
+                className={`bg-white w-full rounded-2xl shadow-2xl flex flex-col
+                    ${jobModalStep === "details" ? "max-w-7xl" : "max-w-2xl"}
+                    max-h-[82vh] md:max-h-[90vh] lg:max-h-[95vh]`}
                 initial={{
                   opacity: 0,
                   y: -80,
@@ -591,7 +607,7 @@ export default function OpenPositions() {
                 }}
               >
                 {/* HEADER */}
-                <div className="flex items-center justify-between px-6 py-4 border-b shrink-0">
+                <div className="relative flex items-center justify-between px-6 py-5 shrink-0">
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-500 mb-1">
                       {jobModalStep === "details"
@@ -609,10 +625,12 @@ export default function OpenPositions() {
                   >
                     <X size={28} />
                   </button>
+
+                  <div className="absolute bottom-0 left-6 right-6 h-px bg-slate-200" />
                 </div>
 
                 {/* CONTENT */}
-                <div className="p-6 overflow-y-auto max-h-[calc(90vh-90px)]">
+                <div className="p-6 overflow-y-auto overscroll-contain max-h-[calc(90vh-90px)]">
                   {jobModalStep === "details" ? (
                     <div className="space-y-6">
                       <div className="flex gap-2 flex-wrap mb-1">

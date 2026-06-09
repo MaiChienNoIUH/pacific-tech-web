@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
     <section className="py-24 bg-gray-50">
       <Container>
         <div className="text-center mb-16">
-          <p className="uppercase text-blue-500 tracking-widest font-bold mb-4">
+          <p className="uppercase text-blue-500 tracking-widest font-bold inline-block rounded-full text-xs bg-blue-100 px-4 py-1.5 mb-2">
             Why Choose Us
           </p>
 

@@ -42,13 +42,13 @@ export default function InternalOverview() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 auto-rows-[220px]">
           <div className="lg:col-span-4 lg:row-span-1 flex-col justify-center p-8 bg-transparent text-left inline-block">
-            <span className="text-sm font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-4 py-1.5 mb-4 rounded-full inline-block border border-blue-100">
+            <span className="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-100 px-4 py-1.5 mb-2 rounded-full inline-block">
               OUR FOCUS
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mt-2 leading-tight tracking-tight">
+            <h2 className="text-3xl! md:text-4xl! font-bold text-slate-900 mt-2 leading-tight tracking-tight">
               Why Our Products
             </h2>
-            <p className="text-xs text-slate-400 mt-2">
+            <p className="text-sm text-slate-400 mt-2">
               Pacific Tech Ecosystem
             </p>
           </div>

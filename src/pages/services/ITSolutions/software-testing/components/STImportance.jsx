@@ -34,7 +34,7 @@ export default function STImportance() {
       <div className="absolute top-0 right-0 w-130 h-130 bg-cyan-100/40 blur-[130px] rounded-full" />
 
       {/* grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
+      <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
 
       <Container>
         <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-20 items-center relative z-10">

@@ -1,4 +1,5 @@
 import Container from "../../../../components/ui/Container";
+import LogisticsVideo from "../../../../assets/Logistics_Media.mp4";
 
 export default function InternalProjectOverview() {
   return (
@@ -7,11 +8,11 @@ export default function InternalProjectOverview() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* TEXT */}
           <div>
-            <span className="inline-flex px-4 py-1.5 mb-2 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-sm font-bold uppercase tracking-widest">
+            <span className="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-4 py-1.5 mb-2 rounded-full inline-block">
               PROJECT OVERVIEW
             </span>
 
-            <h2 className="text-3xl! md:text-4xl font-bold1 text-slate-900 leading-tight mb-6">
+            <h2 className="text-3xl! md:text-4xl! font-bold text-slate-900 leading-tight mb-6">
               Nguyen Ha Logistics
             </h2>
 
@@ -30,15 +31,19 @@ export default function InternalProjectOverview() {
           </div>
 
           {/* VIDEO */}
-          <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/Mz-9VVseYUw"
-              title="Nguyen Ha Logistics Overview"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+          <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-black">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              preload="metadata"
+              playsInline
+            >
+              <source
+                src={LogisticsVideo}
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </Container>

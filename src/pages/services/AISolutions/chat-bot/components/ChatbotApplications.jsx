@@ -39,7 +39,7 @@ export default function ChatbotApplications() {
   const currentData = industries.find((item) => item.id === activeTab);
 
   return (
-    <section className="py-24 bg-slate-50">
+    <section className="py-16 bg-slate-50">
       <Container>
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -53,28 +53,26 @@ export default function ChatbotApplications() {
 
         {/* Bố cục Tab Động Bất Đối Xứng */}
         <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 items-stretch min-h-85">
-          
           {/* CỘT MENU CHỌN TAB BÊN TRÁI */}
-<div className="flex flex-col gap-3 justify-start">
-  {industries.map((tab) => {
-    const isActive = activeTab === tab.id;
+          <div className="flex flex-col gap-3 justify-start">
+            {industries.map((tab) => {
+              const isActive = activeTab === tab.id;
 
-    const iconStyles = {
-      banking:
-        "bg-emerald-100 text-emerald-600 border border-emerald-200",
-      insurance:
-        "bg-rose-100 text-rose-600 border border-rose-200",
-      fintech:
-        "bg-violet-100 text-violet-600 border border-violet-200",
-      "customer-service":
-        "bg-sky-100 text-sky-600 border border-sky-200",
-    };
+              const iconStyles = {
+                banking:
+                  "bg-emerald-100 text-emerald-600 border border-emerald-200",
+                insurance: "bg-rose-100 text-rose-600 border border-rose-200",
+                fintech:
+                  "bg-violet-100 text-violet-600 border border-violet-200",
+                "customer-service":
+                  "bg-sky-100 text-sky-600 border border-sky-200",
+              };
 
-    return (
-      <button
-        key={tab.id}
-        onClick={() => setActiveTab(tab.id)}
-        className={`
+              return (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`
           w-full flex items-center gap-4 p-5 rounded-2xl text-left font-semibold
           transition-all duration-300 group cursor-pointer
           ${
@@ -83,9 +81,9 @@ export default function ChatbotApplications() {
               : "bg-white/90 backdrop-blur-sm text-slate-700 border border-slate-200/70 hover:border-blue-300 hover:bg-blue-50/40"
           }
         `}
-      >
-        <div
-          className={`
+                >
+                  <div
+                    className={`
             w-11 h-11 rounded-xl flex items-center justify-center
             transition-all duration-300
             ${
@@ -94,22 +92,22 @@ export default function ChatbotApplications() {
                 : iconStyles[tab.id]
             }
           `}
-        >
-          <tab.icon size={19} />
-        </div>
+                  >
+                    <tab.icon size={19} />
+                  </div>
 
-        <span
-          className={`
+                  <span
+                    className={`
             text-sm tracking-wide transition-colors duration-300
             ${isActive ? "text-white" : "text-slate-700"}
           `}
-        >
-          {tab.tabTitle}
-        </span>
-      </button>
-    );
-  })}
-</div>
+                  >
+                    {tab.tabTitle}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
 
           <div className="bg-white border border-slate-200/60 rounded-3xl p-8 md:p-12 text-left flex flex-col justify-center relative overflow-hidden shadow-xs">
             <AnimatePresence mode="wait">
@@ -132,7 +130,6 @@ export default function ChatbotApplications() {
               </motion.div>
             </AnimatePresence>
           </div>
-
         </div>
       </Container>
     </section>

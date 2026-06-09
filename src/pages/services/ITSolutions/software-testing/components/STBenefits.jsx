@@ -46,7 +46,7 @@ export default function STBenefits() {
                   transition={{ delay: idx * 0.08 }}
                   className="flex gap-4 items-start"
                 >
-                  <CheckCircle2 className="text-cyan-400 mt-1 flex-shrink-0" size={24} />
+                  <CheckCircle2 className="text-cyan-400 mt-1 shrink-0" size={24} />
                   <p className="text-slate-300 leading-relaxed">{benefit}</p>
                 </motion.div>
               ))}
