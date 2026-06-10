@@ -56,11 +56,11 @@ export default function VoiceRecognitionUseCases() {
               Industry Solutions
             </span>
 
-            <h2 className="mt-7 text-3xl! font-bold text-slate-900 leading-[1.05] tracking-tight">
+            <h2 className="mt-2 text-3xl! font-bold text-slate-900 leading-[1.05] tracking-tight">
               Industry Applications
             </h2>
 
-            <p className="mt-6 text-slate-500 leading-relaxed">
+            <p className="mt-2 text-slate-700 leading-relaxed">
               AI-powered voice recognition systems tailored for real-world operational workflows.
             </p>
           </motion.div>
@@ -81,7 +81,7 @@ export default function VoiceRecognitionUseCases() {
                 whileHover={{ y: -4 }}
                 className="group border-b border-slate-200 pb-14"
               >
-                <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-10 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-3 md:gap-2 lg:gap-10 items-center">
                   
                   {/* IMAGE */}
                   <motion.div
@@ -97,7 +97,7 @@ export default function VoiceRecognitionUseCases() {
                   </motion.div>
 
                   {/* CONTENT */}
-                  <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-8 items-start">
+                  <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-2 items-start">
                     
                     <motion.h3
                       initial={{ opacity: 0, x: -15 }}

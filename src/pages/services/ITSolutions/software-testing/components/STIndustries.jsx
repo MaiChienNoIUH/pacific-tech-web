@@ -80,7 +80,7 @@ const technologies = [
 
 export default function STIndustries() {
   return (
-    <section className="py-28 bg-white overflow-hidden relative">
+    <section className="py-22 bg-white overflow-hidden relative">
       {/* background glow */}
       <div className="absolute top-1/2 -right-32 w-96 h-96 bg-cyan-100/30 blur-3xl rounded-full -translate-y-1/2" />
 
@@ -92,17 +92,17 @@ export default function STIndustries() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mb-20"
+            className="max-w-3xl mb-10 lg:mb-20"
           >
             <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-cyan-50 border border-cyan-100 text-sm font-semibold text-cyan-700">
               Modern Tech Stack
             </span>
 
-            <h2 className="mt-6 text-5xl font-bold text-slate-900 leading-tight">
+            <h2 className="mt-3 lg:mt-6 text-5xl font-bold text-slate-900 leading-tight">
               Advanced Testing Technology Stack
             </h2>
 
-            <p className="mt-5 text-lg text-slate-600 leading-relaxed">
+            <p className="mt-2 lg:mt-5 text-lg text-slate-600 leading-relaxed">
               We combine industry-leading manual and automation testing tools
               to ensure reliable product quality, streamlined collaboration,
               and scalable QA workflows.

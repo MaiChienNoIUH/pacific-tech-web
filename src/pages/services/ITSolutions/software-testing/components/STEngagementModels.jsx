@@ -33,7 +33,7 @@ const models = [
 
 export default function STEngagementModels() {
   return (
-    <section className="py-28 bg-[#f4f7fa] relative overflow-hidden">
+    <section className="py-22 bg-[#f4f7fa] relative overflow-hidden">
       <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#dbe4ee_1px,transparent_1px),linear-gradient(to_bottom,#dbe4ee_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
 
       <Container>
@@ -44,17 +44,17 @@ export default function STEngagementModels() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="max-w-3xl mb-20"
+            className="max-w-3xl mb-10 lg:mb-20"
           >
             <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-white border border-slate-200 text-sm font-semibold text-cyan-700 shadow-sm">
               Engagement Options
             </span>
 
-            <h2 className="mt-7 text-5xl font-bold text-slate-900 leading-[1.05]">
+            <h2 className="mt-3 lg:mt-7 text-5xl font-bold text-slate-900 leading-[1.05]">
               Flexible Partnership Models
             </h2>
 
-            <p className="mt-6 text-lg text-slate-600">
+            <p className="mt-4 lg:mt-6 text-lg text-slate-600">
               Choose the testing model that aligns with your team's capacity,
               budget, and project timeline.
             </p>

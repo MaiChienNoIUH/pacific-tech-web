@@ -157,10 +157,10 @@ const services = {
 };
 
 export default function STServices() {
-  const [activeTab, setActiveTab] = useState("Testing Services");
+  const [activeTab, setActiveTab] = useState("Industries");
 
   return (
-    <section className="py-28 pb-18 bg-[#f6f9fc] relative overflow-hidden">
+    <section className="py-22 pb-18 bg-[#f6f9fc] relative overflow-hidden">
       {/* glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-175 h-175 bg-cyan-100/40 blur-[140px] rounded-full" />
 
@@ -188,7 +188,7 @@ export default function STServices() {
           </div>
 
           {/* TABS */}
-          <div className="mt-16 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 lg:mt-16 flex flex-wrap justify-center gap-3">
             {tabs.map((tab) => {
               const active = activeTab === tab;
 
@@ -212,7 +212,7 @@ export default function STServices() {
           </div>
 
           {/* CONTENT */}
-          <div className="mt-14">
+          <div className="mt-4 lg:mt-14">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}

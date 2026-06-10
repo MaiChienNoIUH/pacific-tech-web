@@ -27,7 +27,7 @@ const cards = [
 
 export default function RemoteStaffingBenefits() {
   return (
-    <section className="py-28 bg-[#f4f7fa] relative overflow-hidden">
+    <section className="py-22 bg-[#f4f7fa] relative overflow-hidden">
       <Container>
         <div className="max-w-3xl mb-18">
           <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-white border border-slate-200 text-sm font-semibold text-cyan-700 shadow-sm">

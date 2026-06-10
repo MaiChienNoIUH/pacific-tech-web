@@ -21,7 +21,7 @@ export default function VoicebotIntro() {
   return (
     <section className="py-24 bg-white border-b border-slate-200 overflow-hidden">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-10 items-center">
           
           {/* LEFT */}
           <motion.div
@@ -35,7 +35,7 @@ export default function VoicebotIntro() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="inline-flex items-center px-4 py-1.5 mb-3 rounded-full bg-blue-50 border border-blue-100 text-sm font-medium text-blue-700"
+              className="inline-flex items-center px-4 py-1.5 mb-2 rounded-full bg-blue-50 border border-blue-100 text-sm font-medium text-blue-700"
             >
               What is a Voicebot?
             </motion.span>
@@ -78,14 +78,14 @@ export default function VoicebotIntro() {
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="relative hidden lg:block"
+            className="relative flex items-center justify-center"
           >
             <motion.img
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.35 }}
               src={voicebotIntro}
               alt=""
-              className="rounded-4xl shadow-2xl object-cover border border-slate-200"
+              className="relative flex items-center justify-center"
             />
 
             {/* Glow */}

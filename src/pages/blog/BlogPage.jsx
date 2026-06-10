@@ -104,7 +104,7 @@ export default function BlogPage() {
                     className="h-96 w-full object-cover transition duration-500 group-hover:scale-[1.01]"
                   />
                 </Link>
-                <p className="mt-3 text-xl font-semibold text-slate-400">
+                <p className="mt-3 text-sm lg:text-xl font-semibold text-slate-400">
                   {featuredBlog.date}
                 </p>
                 <Link to={`/blog/${featuredBlog.slug}`}>
@@ -190,7 +190,7 @@ export default function BlogPage() {
                   key={group.id}
                   className="border-t border-slate-200 pt-12 first:border-t-0 first:pt-0"
                 >
-                  <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+                  <div className="mb-3 lg:mb-8 flex flex-wrap items-center lg:items-end justify-between gap-4">
                     <h3 className="text-2xl text-slate-900 md:text-4xl font-bold">
                       {group.name}
                     </h3>

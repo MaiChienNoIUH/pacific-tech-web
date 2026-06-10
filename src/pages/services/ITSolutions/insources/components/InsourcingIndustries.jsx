@@ -31,7 +31,7 @@ const industries = [
 
 export default function InsourcingIndustries() {
   return (
-    <section className="py-28 bg-white">
+    <section className="py-22 bg-white">
       <Container>
         <div className="max-w-3xl mb-16">
           <span className="inline-flex items-center px-4 py-1.5 mb-3 rounded-full bg-cyan-50 border border-cyan-100 text-sm font-semibold tracking-wide text-cyan-700 shadow-sm">
