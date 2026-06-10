@@ -1,5 +1,6 @@
 import Container from "../../../../components/ui/Container";
 import LogisticsVideo from "../../../../assets/Logistics_Media.mp4";
+import logisticsThumbnail from "../../../../assets/logistics-thumbnail.webp";
 
 export default function InternalProjectOverview() {
   return (
@@ -37,6 +38,7 @@ export default function InternalProjectOverview() {
               controls
               preload="metadata"
               playsInline
+              poster={logisticsThumbnail}
             >
               <source
                 src={LogisticsVideo}
