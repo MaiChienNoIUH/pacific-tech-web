@@ -33,7 +33,7 @@ export default function InternalProjectOverview() {
           {/* VIDEO */}
           <div className="w-full aspect-video rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-black">
             <video
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain"
               controls
               preload="metadata"
               playsInline
