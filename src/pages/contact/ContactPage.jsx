@@ -237,9 +237,9 @@ export default function ContactPage() {
                 <p className="inline-flex rounded-full bg-sky-100 px-4 py-1 text-sm font-semibold text-sky-700">
                   Contact Pacific Tech
                 </p>
-                <h1 className="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl mb-3!">
+                <h2 className="text-4xl font-black tracking-tight text-slate-950 sm:text-5xl mb-3! pt-6">
                   How can we help?
-                </h1>
+                </h2>
                 <p className="max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
                   Share a few details about your project and we&apos;ll help you
                   map the right team, solution, and next steps.
