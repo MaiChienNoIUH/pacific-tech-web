@@ -38,7 +38,7 @@ const items = [
 
 export default function InternalOverview() {
   return (
-    <section className="py-24 pb-12 bg-slate-50">
+    <section className="py-8 pb-12 bg-slate-50">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 auto-rows-[220px]">
           <div className="lg:col-span-4 lg:row-span-1 flex-col justify-center p-8 bg-transparent text-left inline-block">

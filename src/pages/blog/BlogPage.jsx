@@ -96,7 +96,7 @@ export default function BlogPage() {
               >
                 <Link
                   to={`/blog/${featuredBlog.slug}`}
-                  className="block overflow-hidden rounded-3xl"
+                  className="block overflow-hidden rounded-xl lg:rounded-3xl"
                 >
                   <img
                     src={featuredBlog.image}
@@ -166,7 +166,7 @@ export default function BlogPage() {
           )}
 
           {/* Gradient hero - separated from category lists */}
-          <section className="mt-18 overflow-hidden rounded-3xl bg-linear-to-br from-[#071329] via-[#0c2147] to-[#20a4e6] p-12 text-white shadow-[0_30px_90px_rgba(15,23,42,0.18)]">
+          <section className="mt-18 overflow-hidden rounded-xl lg:rounded-3xl bg-linear-to-br from-[#071329] via-[#0c2147] to-[#20a4e6] p-12 text-white shadow-[0_30px_90px_rgba(15,23,42,0.18)]">
             <div className="text-center">
               <h2 className="text-3xl! md:text-5xl! font-black! leading-7!">
                 Explore our solutions

@@ -84,7 +84,7 @@ export default function STIntro() {
             <img
               src={softwareTestingImg}
               alt="Software testing services"
-              className="relative z-10 w-full max-w-none rounded-[2.5rem] shadow-2xl object-cover border border-slate-200"
+              className="relative z-10 w-full max-w-none rounded-xl lg:rounded-[2.5rem] shadow-2xl object-cover border border-slate-200"
             />
           </motion.div>
         </div>

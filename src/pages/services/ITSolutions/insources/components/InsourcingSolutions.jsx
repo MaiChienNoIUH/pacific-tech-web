@@ -59,7 +59,7 @@ export default function InsourcingSolutions() {
                 {/* IMAGE */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="rounded-4xl overflow-hidden border border-slate-200 shadow-sm"
+                  className="rounded-xl lg:rounded-4xl overflow-hidden border border-slate-200 shadow-sm"
                 >
                   <img
                     src={item.image}

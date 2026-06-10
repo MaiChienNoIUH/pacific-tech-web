@@ -56,7 +56,7 @@ export default function OutsourcingSolutions() {
                   reverse ? "lg:flex-row-reverse" : ""
                 }`}
               >
-                <motion.div whileHover={{ scale: 1.02 }} className="rounded-4xl overflow-hidden border shadow-sm">
+                <motion.div whileHover={{ scale: 1.02 }} className="rounded-xl lg:rounded-4xl overflow-hidden border shadow-sm">
                   <img src={s.image} className="w-full h-96 object-cover" />
                 </motion.div>
 

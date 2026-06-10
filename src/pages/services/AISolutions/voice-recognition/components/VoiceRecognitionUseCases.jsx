@@ -87,7 +87,7 @@ export default function VoiceRecognitionUseCases() {
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.35 }}
-                    className="overflow-hidden rounded-4xl bg-white shadow-sm border border-slate-200"
+                    className="overflow-hidden rounded-xl lg:rounded-3xl bg-white shadow-sm border border-slate-200"
                   >
                     <img
                       src={item.image}

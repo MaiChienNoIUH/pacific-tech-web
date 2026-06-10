@@ -30,14 +30,14 @@ export default function AIUsecases() {
   return (
     <section className="py-28 bg-[#f5f9ff] overflow-hidden">
       <Container>
-        <div className="space-y-32">
+        <div className="space-y-18 lg:space-y-32">
           {items.map((item, i) => {
             const reverse = i % 2 === 1;
 
             return (
               <motion.div
                 key={i}
-                className="grid grid-cols-1 md:grid-cols-12 gap-3 lg:gap-16 items-center group"
+                className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-16 items-center group"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -75,7 +75,7 @@ export default function AIUsecases() {
 
                 {/* IMAGE SECTION */}
                 <div className={`md:col-span-5 ${reverse ? "md:order-1" : ""}`}>
-                  <div className="overflow-hidden rounded-2xl shadow-xl bg-white aspect-4/3 max-h-80 w-full">
+                  <div className="overflow-hidden rounded-xl lg:rounded-3xl shadow-xl bg-white aspect-4/3 max-h-80 w-full">
                     <img
                       src={item.img}
                       alt={item.title}
