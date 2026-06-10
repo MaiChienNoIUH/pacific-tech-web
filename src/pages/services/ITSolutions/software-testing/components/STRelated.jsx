@@ -25,7 +25,7 @@ const articles = [
 
 export default function STRelated() {
   return (
-    <section className="py-28 bg-white overflow-hidden">
+    <section className="py-22 bg-white overflow-hidden">
       <Container>
         <div className="max-w-3xl mb-16">
           <motion.div
@@ -37,11 +37,11 @@ export default function STRelated() {
               Resources
             </span>
 
-            <h2 className="mt-6 text-4xl font-bold text-slate-900">
+            <h2 className="mt-3 lg:mt-6 text-4xl font-bold text-slate-900">
               Insights & Case Studies
             </h2>
 
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 lg:mt-4 text-lg text-slate-600">
               Explore industry knowledge and real-world examples of how quality testing accelerates product success.
             </p>
           </motion.div>

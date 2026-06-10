@@ -25,7 +25,7 @@ const solutions = [
 
 export default function OutsourcingSolutions() {
   return (
-    <section className="py-28 bg-white">
+    <section className="py-20 bg-white">
       <Container>
 
         <div className="max-w-3xl mb-20">
@@ -52,7 +52,7 @@ export default function OutsourcingSolutions() {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className={`grid lg:grid-cols-2 gap-14 items-center ${
+                className={`grid lg:grid-cols-2 gap-3 lg:gap-14 items-center ${
                   reverse ? "lg:flex-row-reverse" : ""
                 }`}
               >
@@ -65,11 +65,11 @@ export default function OutsourcingSolutions() {
                     {s.title}
                   </h3>
 
-                  <p className="mt-5 text-lg text-slate-600 leading-relaxed">
+                  <p className="mt-2 lg:mt-5 text-lg text-slate-600 leading-relaxed">
                     {s.desc}
                   </p>
 
-                  <div className="mt-8 h-1 w-24 bg-linear-to-r from-cyan-400 to-blue-500 rounded-full" />
+                  <div className="mt-2 lg:mt-8 h-1 w-24 bg-linear-to-r from-cyan-400 to-blue-500 rounded-full" />
                 </div>
               </motion.div>
             );

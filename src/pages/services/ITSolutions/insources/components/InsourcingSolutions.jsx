@@ -25,7 +25,7 @@ const solutions = [
 
 export default function InsourcingSolutions() {
   return (
-    <section className="py-28 bg-white overflow-hidden">
+    <section className="py-22 bg-white overflow-hidden">
       <Container>
         <div className="max-w-3xl mb-20">
           <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-cyan-50 border border-cyan-100 text-sm font-semibold text-cyan-700">
@@ -52,7 +52,7 @@ export default function InsourcingSolutions() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-14 items-center ${
+                className={`grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-14 items-center ${
                   reverse ? "lg:flex-row-reverse" : ""
                 }`}
               >
@@ -77,7 +77,7 @@ export default function InsourcingSolutions() {
                     {item.desc}
                   </p>
 
-                  <div className="mt-8 h-1 w-24 bg-linear-to-r from-cyan-400 to-blue-500 rounded-full" />
+                  <div className="mt-2 lg:mt-8 h-1 w-24 bg-linear-to-r from-cyan-400 to-blue-500 rounded-full" />
                 </div>
               </motion.div>
             );

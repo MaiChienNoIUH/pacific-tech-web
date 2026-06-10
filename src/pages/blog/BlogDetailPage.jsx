@@ -82,24 +82,31 @@ export default function BlogDetailPage() {
   useEffect(() => {
     setActiveChapter(tocItems[0]?.id ?? "");
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort(
-            (first, second) =>
-              first.boundingClientRect.top - second.boundingClientRect.top,
-          );
+const observer = new IntersectionObserver(
+  () => {
+    let current = tocItems[0]?.id;
 
-        if (visibleEntries[0]) {
-          setActiveChapter(visibleEntries[0].target.id);
-        }
-      },
-      {
-        rootMargin: "-15% 0px -70% 0px",
-        threshold: 0.2,
-      },
-    );
+    for (const item of tocItems) {
+      const element = document.getElementById(item.id);
+
+      if (!element) continue;
+
+      const rect = element.getBoundingClientRect();
+
+      if (rect.top <= 150) {
+        current = item.id;
+      } else {
+        break;
+      }
+    }
+
+    setActiveChapter(current);
+  },
+  {
+    rootMargin: "-15% 0px -70% 0px",
+    threshold: 0.2,
+  },
+);
 
     tocItems.forEach((item) => {
       const element = document.getElementById(item.id);

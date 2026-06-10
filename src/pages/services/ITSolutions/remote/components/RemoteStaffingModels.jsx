@@ -32,7 +32,7 @@ const models = [
 
 export default function RemoteStaffingModels() {
   return (
-    <section className="py-28 relative overflow-hidden text-white">
+    <section className="py-22 relative overflow-hidden text-white">
       <div className="absolute inset-0 bg-[linear-gradient(135deg,#163B66_0%,#0E1D54_28%,#0B1744_55%,#081235_100%)]" />
 
       <Container>

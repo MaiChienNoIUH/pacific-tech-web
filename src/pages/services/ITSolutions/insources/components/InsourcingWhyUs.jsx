@@ -12,7 +12,7 @@ const items = [
 
 export default function InsourcingWhyUs() {
   return (
-    <section className="py-28 bg-slate-950 text-white relative overflow-hidden">
+    <section className="py-22 bg-slate-950 text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(135deg,#0B1744,#081235,#050A1F)]" />
       <div className="absolute -top-40 left-1/2 w-160 h-160 bg-cyan-500/10 blur-[160px] rounded-full -translate-x-1/2" />
 

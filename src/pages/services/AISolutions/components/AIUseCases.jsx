@@ -37,7 +37,7 @@ export default function AIUsecases() {
             return (
               <motion.div
                 key={i}
-                className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-center group"
+                className="grid grid-cols-1 md:grid-cols-12 gap-3 lg:gap-16 items-center group"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}

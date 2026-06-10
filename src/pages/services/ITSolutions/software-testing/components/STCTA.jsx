@@ -7,7 +7,7 @@ export default function STCTA() {
 
       <Container>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="inline-flex px-4 py-1.5 mb-3 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 text-sm font-semibold">
+          <span className="inline-flex px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 text-sm font-semibold">
             Let’s talk about your product quality
           </span>
 
@@ -19,8 +19,11 @@ export default function STCTA() {
             Let’s build a reliable testing strategy for your system.
           </p>
 
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="px-8 py-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:scale-105 active:scale-95">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="/contact"
+              className="inline-flex w-fit px-8 py-2 rounded-full bg-linear-to-r from-cyan-500 to-blue-500 text-white font-semibold shadow-lg shadow-cyan-500/20 hover:scale-105 active:scale-95"
+            >
               Talk to Us
             </a>
           </div>

@@ -13,7 +13,7 @@ export default function WebDevOverview() {
       <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
 
       <Container>
-        <div className="grid lg:grid-cols-[1fr_560px] gap-20 items-center relative z-10">
+        <div className="grid lg:grid-cols-[1fr_560px] gap-10 lg:gap-20 items-center relative z-10">
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 35 }}
@@ -61,7 +61,7 @@ export default function WebDevOverview() {
             initial={{ opacity: 0, scale: 0.92, x: 40 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative hidden lg:flex justify-center"
+            className="relative flex items-center justify-center"
           >
             <div className="absolute inset-0 bg-cyan-200/30 blur-3xl rounded-full" />
 

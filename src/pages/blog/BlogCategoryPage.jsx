@@ -59,7 +59,7 @@ export default function BlogCategoryPage() {
 
       <main className="pt-28 pb-20">
         <Container>
-          <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+          <div className="mb-4 lg:mb-8 flex flex-wrap items-center justify-between gap-4">
             <Link
               to="/blog"
               className="inline-flex items-center gap-2 text-sm font-semibold text-sky-600 transition hover:text-sky-700"

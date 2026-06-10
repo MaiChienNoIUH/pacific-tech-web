@@ -28,7 +28,7 @@ const qualityCards = [
 
 export default function TestingTypes() {
   return (
-    <section className="py-28 pt-16 bg-[#f4f7fa] relative overflow-hidden">
+    <section className="py-20 pt-16 bg-[#f4f7fa] relative overflow-hidden">
       <div className="hidden absolute inset-0 bg-[linear-gradient(to_right,#dbe4ee_1px,transparent_1px),linear-gradient(to_bottom,#dbe4ee_1px,transparent_1px)] bg-size-[5rem_5rem] opacity-[0.18]" />
 
       <Container>
@@ -53,7 +53,7 @@ export default function TestingTypes() {
               We employ adaptive testing methodologies that emphasize intelligent validation, rapid issue detection, and seamless integration with your delivery pipeline.
             </p>
 
-            <div className="mt-12 flex justify-center">
+            <div className="mt-4 lg:mt-12 flex justify-center">
               <img
                 src={typeImg}
                 alt="Software testing process diagram"
