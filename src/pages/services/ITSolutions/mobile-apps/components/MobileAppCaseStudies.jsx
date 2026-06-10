@@ -41,7 +41,7 @@ export default function MobileAppCaseStudies() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="rounded-4xl overflow-hidden border border-slate-200 shadow-lg bg-slate-50"
+            className="rounded-xl lg:rounded-4xl overflow-hidden border border-slate-200 shadow-lg bg-slate-50"
           >
             <img src={mobileAppImage} alt="Mobile app case study" className="w-full h-full object-cover" />
           </motion.div>

@@ -68,7 +68,7 @@ export default function WebDevOverview() {
             <img
               src={webDevImage}
               alt="Web Development Overview"
-              className="relative z-10 w-160 rounded-[2.5rem] border border-slate-200 shadow-2xl"
+              className="relative z-10 w-160 rounded-xl lg:rounded-[2.5rem] border border-slate-200 shadow-2xl"
             />
           </motion.div>
         </div>

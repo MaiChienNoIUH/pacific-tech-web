@@ -20,7 +20,7 @@ const services = [
 
 export default function ITServicesList() {
   return (
-    <section className="py-28 pt-18 bg-[#f5f9ff] overflow-hidden">
+    <section className="py-22 pt-18 bg-[#f5f9ff] overflow-hidden">
       <Container>
         <div className="text-left max-w-3xl mb-12">
           <span className="text-sm font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-4 py-1.5 rounded-full inline-block border border-blue-100 mb-2">
@@ -31,13 +31,13 @@ export default function ITServicesList() {
           </h2>
         </div>
 
-        <div className="space-y-32">
+        <div className="space-y-18 lg:space-y-32">
           {services.map((item, i) => {
             const reverse = i % 2 === 1;
             return (
               <motion.div
                 key={i}
-                className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 items-center group"
+                className="grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-16 items-center group"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -68,7 +68,7 @@ export default function ITServicesList() {
                 </div>
 
                 <div className={`md:col-span-5 ${reverse ? "md:order-1" : ""}`}>
-                  <div className="overflow-hidden rounded-3xl shadow-lg border border-blue-100/40 bg-white aspect-4/3 max-h-75 w-full">
+                  <div className="overflow-hidden rounded-xl lg:rounded-3xl shadow-lg border border-blue-100/40 bg-white aspect-4/3 max-h-75 w-full">
                     <img src={item.img} alt={item.title} className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
                   </div>
                 </div>

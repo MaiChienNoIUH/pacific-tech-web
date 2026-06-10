@@ -53,7 +53,7 @@ export default function OutsourcingIntro() {
 
             <img
               src={outsourcingIntro}
-              className="relative z-10 rounded-[2.5rem] border border-slate-200 shadow-2xl"
+              className="relative z-10 rounded-xl lg:rounded-[2.5rem] border border-slate-200 shadow-2xl"
             />
           </motion.div>
         </div>
